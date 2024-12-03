@@ -38,6 +38,7 @@ const Section = styled.section`
   padding: 20px;
   background-color: #f7f7f7;
   border-radius: 8px;
+  font-size: 0.9rem;
 `;
 
 const PositionAbsoluteTitle = styled.h2`
@@ -71,6 +72,7 @@ const RadioGroup = styled.div`
   align-items: flex-start;
   margin: 10px 0;
   gap: 10px;
+  
 `;
 
 const RadioButtonContainer = styled.div`
@@ -111,15 +113,28 @@ const MultiSelect = styled.select`
 `;
 
 const CheckboxGroup = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 sütunlu grid */
   gap: 15px;
+  justify-content: flex-start; /* Sol hizalama */
 `;
+
+const SectionTitle = styled.h3`
+  text-align: left; /* Align the title to the left */
+  width: 100%; /* Ensure it takes the full width of the container */
+`;
+
+const InfoText = styled.p`
+  text-align: left; /* Align the text to the left */
+  width: 100%; /* Ensure it takes the full width of the container */
+`;
+
 
 const CheckboxLabel = styled.label`
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-size: 0.9rem;
 `;
 
 const Textarea = styled.textarea`
@@ -246,106 +261,108 @@ function SiparisFormu() {
       </Header>
 
       <Section>
-          <PositionAbsoluteTitle>Position Absolute Acı Pizza</PositionAbsoluteTitle>
+  <PositionAbsoluteTitle>Position Absolute Acı Pizza</PositionAbsoluteTitle>
 
-          <PriceSection>
-            <Price>85.50₺</Price>
-            <Rating>
-              <span>4.9</span> (200)
-            </Rating>
-          </PriceSection>
+  <PriceSection>
+    <Price>85.50₺</Price>
+    <Rating>
+      <span>4.9</span> (200)
+    </Rating>
+  </PriceSection>
 
-          <Description>
-            Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam
-            sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle
-            kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek
-            sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
-            hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
-            pizetta denir.
-          </Description>
+  <Description>
+    Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam
+    sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle
+    kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek
+    sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
+    hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
+    pizetta denir.
+  </Description>
 
-          <SelectionContainer>
-            <RadioGroup>
-              <RadioLabel>
-                <RedStar>*</RedStar>
-                <span>Boyut Seç</span>
-              </RadioLabel>
-              <RadioButtonContainer>
-                <input
-                  type="radio"
-                  id="small"
-                  value="small"
-                  checked={size === 'small'}
-                  onChange={(e) => setSize(e.target.value)}
-                />
-                <label htmlFor="small">Küçük</label>
-              </RadioButtonContainer>
-              <RadioButtonContainer>
-                <input
-                  type="radio"
-                  id="medium"
-                  value="medium"
-                  checked={size === 'medium'}
-                  onChange={(e) => setSize(e.target.value)}
-                />
-                <label htmlFor="medium">Orta</label>
-              </RadioButtonContainer>
-              <RadioButtonContainer>
-                <input
-                  type="radio"
-                  id="large"
-                  value="large"
-                  checked={size === 'large'}
-                  onChange={(e) => setSize(e.target.value)}
-                />
-                <label htmlFor="large">Büyük</label>
-              </RadioButtonContainer>
-            </RadioGroup>
+  <SelectionContainer>
+    <RadioGroup>
+      <RadioLabel>
+        <RedStar>*</RedStar>
+        <span>Boyut Seç</span>
+      </RadioLabel>
+      <RadioButtonContainer>
+        <input
+          type="radio"
+          id="small"
+          value="small"
+          checked={size === 'small'}
+          onChange={(e) => setSize(e.target.value)}
+        />
+        <label htmlFor="small">Küçük</label>
+      </RadioButtonContainer>
+      <RadioButtonContainer>
+        <input
+          type="radio"
+          id="medium"
+          value="medium"
+          checked={size === 'medium'}
+          onChange={(e) => setSize(e.target.value)}
+        />
+        <label htmlFor="medium">Orta</label>
+      </RadioButtonContainer>
+      <RadioButtonContainer>
+        <input
+          type="radio"
+          id="large"
+          value="large"
+          checked={size === 'large'}
+          onChange={(e) => setSize(e.target.value)}
+        />
+        <label htmlFor="large">Büyük</label>
+      </RadioButtonContainer>
+    </RadioGroup>
 
-            <SelectGroup>
-              <label htmlFor="dough">
-                <RedStar>*</RedStar> Hamur Seç
-              </label>
-              <MultiSelect
-                id="dough"
-                onChange={(e) => setDough(e.target.value)}
-                value={dough}
-              >
-                <option value="">Hamur Türü Seçin</option>
-                <option value="thin">İnce</option>
-                <option value="thick">Kalın</option>
-              </MultiSelect>
-            </SelectGroup>
-          </SelectionContainer>
+    <SelectGroup>
+      <label htmlFor="dough">
+        <RedStar>*</RedStar> Hamur Seç
+      </label>
+      <MultiSelect
+        id="dough"
+        onChange={(e) => setDough(e.target.value)}
+        value={dough}
+      >
+        <option value="">Hamur Türü Seçin</option>
+        <option value="thin">İnce</option>
+        <option value="thick">Kalın</option>
+      </MultiSelect>
+    </SelectGroup>
+  </SelectionContainer>
 
-          <h3>Ek Malzemeler</h3>
-          <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
-          <CheckboxGroup>
-            {[
-              'pepperoni',
-              'sosis',
-              'kanada Jambonu',
-              'Tavuk Izgara',
-              'soğan',
-              'domates',
-              'mısır',
-              'sucuk',
-              'jalepeno',
-              'sarımsak',
-              'biber',
-              'ananas',
-              'kabak',
-            ].map((item) => (
-              <CheckboxLabel key={item}>
-                <input
-                  type="checkbox"
-                  value={item}
-                  onChange={handleExtrasChange}
-                />
-                {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
-              </CheckboxLabel>
-            ))}
-          </CheckboxGroup>
+  {/* Title and Info Text */}
+  <SectionTitle>Ek Malzemeler</SectionTitle>
+  <InfoText>En Fazla 10 malzeme seçebilirsiniz. 5₺</InfoText>
+  
+  <CheckboxGroup>
+  {[
+    'pepperoni',
+    'sosis',
+    'kanada Jambonu',
+    'Tavuk Izgara',
+    'soğan',
+    'domates',
+    'mısır',
+    'sucuk',
+    'jalepeno',
+    'sarımsak',
+    'biber',
+    'ananas',
+    'kabak',
+  ].map((item) => (
+    <CheckboxLabel key={item}>
+      <input
+        type="checkbox"
+        value={item}
+        onChange={handleExtrasChange}
+      />
+      {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
+    </CheckboxLabel>
+  ))}
+</CheckboxGroup>
 
           {/* İsim Inputu */}
           <div>

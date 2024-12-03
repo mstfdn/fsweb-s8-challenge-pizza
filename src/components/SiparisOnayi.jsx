@@ -12,7 +12,9 @@ const Container = styled.div`
   justify-content: center;
   height: 100vh;
   text-align: center;
-  font-family:  "Quattrocento", serif;
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
   background: red;
 `;
 
