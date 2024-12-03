@@ -4,6 +4,7 @@ import React from 'react';
 const SiparisOnayi = () => {
   return (
     <div>
+      
       <p>Tebrikler! Siparişiniz alındı!</p>
     </div>
   );

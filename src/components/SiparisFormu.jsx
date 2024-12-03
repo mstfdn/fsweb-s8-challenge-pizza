@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios'; // Axios'u içe aktarın
-
 
 const FormContainer = styled.div`
   max-width: 600px;
@@ -61,6 +60,8 @@ function SiparisFormu() {
   const [note, setNote] = useState('');
   const [quantity, setQuantity] = useState(1);
 
+  const navigate = useNavigate(); // useNavigate hook'u ile yönlendirme işlemi yapılacak
+
   // Ekstra malzemeleri işleme
   const handleExtrasChange = (e) => {
     const { value, checked } = e.target;
@@ -88,15 +89,8 @@ function SiparisFormu() {
       quantity,
     };
 
-    try {
-      // API isteği gönderme
-      const response = await axios.post('https://reqres.in/api/pizza', order);
-      console.log(response.data); // Başarılı yanıtı konsola yazdır
-      alert('Siparişiniz başarıyla alındı!');
-    } catch (error) {
-      console.error('Sipariş gönderiminde hata:', error);
-      alert('Sipariş gönderirken bir hata oluştu. Lütfen tekrar deneyin.');
-    }
+    // Formu gönderdikten sonra onay sayfasına yönlendir
+    navigate('/onay'); // Yönlendirme işlemi
   };
 
   return (
