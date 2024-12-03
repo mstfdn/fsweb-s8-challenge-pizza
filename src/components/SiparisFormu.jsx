@@ -3,15 +3,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-
-// Ana konteyner bileşeni
 const Container = styled.div`
   font-family: Arial, sans-serif;
   max-width: 800px;
   margin: 0 auto;
 `;
 
-// Başlık bileşeni
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -21,13 +18,11 @@ const Header = styled.header`
   color: white;
 `;
 
-// Navigasyon bileşeni
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
 `;
 
-// Navigasyon bağlantısı bileşeni
 const NavLink = styled.a`
   color: white;
   text-decoration: none;
@@ -38,7 +33,6 @@ const NavLink = styled.a`
   }
 `;
 
-// Ana içerik bölümü
 const Section = styled.section`
   position: relative;
   padding: 20px;
@@ -46,14 +40,12 @@ const Section = styled.section`
   border-radius: 8px;
 `;
 
-// Başlık
 const PositionAbsoluteTitle = styled.h2`
   position: absolute;
   left: 20px;
   top: 10px;
 `;
 
-// Fiyat bölümü
 const PriceSection = styled.div`
   display: flex;
   justify-content: space-between;
@@ -73,19 +65,18 @@ const Description = styled.p`
   margin-top: 20px;
 `;
 
-// Radyo buton grubu
 const RadioGroup = styled.div`
   display: flex;
-  flex-direction: column; /* Sütun düzeni */
-  align-items: flex-start; /* Sol tarafa dayalı */
+  flex-direction: column;
+  align-items: flex-start;
   margin: 10px 0;
-  gap: 10px; /* Radio butonlar arasındaki boşluk */
+  gap: 10px;
 `;
 
 const RadioButtonContainer = styled.div`
   display: flex;
-  align-items: center; /* Metin ve buton hizalaması */
-  gap: 5px; /* Buton ve metin arası boşluk */
+  align-items: center;
+  gap: 5px;
 `;
 
 const RadioLabel = styled.div`
@@ -94,26 +85,24 @@ const RadioLabel = styled.div`
   gap: 5px;
 `;
 
-// Kırmızı yıldız bileşeni
 const RedStar = styled.span`
   color: red;
   margin-right: 5px;
 `;
 
-// Seçim grubu
 const SelectionContainer = styled.div`
   display: flex;
-  justify-content: space-between; /* Boyut ve hamur kısımlarını uçlara hizalar */
-  align-items: flex-start; /* Üst kısımdan hizalar */
-  gap: 20px; /* İki bölüm arasına boşluk ekler */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
   margin: 10px 0;
 `;
 
 const SelectGroup = styled.div`
   display: flex;
-  flex-direction: column; /* Select öğesini alt alta sıralar */
-  align-items: flex-start; /* Sağ tarafa hizalar */
-  gap: 5px; /* Hamur seç yazısı ile select öğesi arasında boşluk */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 `;
 
 const MultiSelect = styled.select`
@@ -166,33 +155,26 @@ const QuantityButton = styled.button`
   }
 `;
 
-// Seçim ve toplam fiyat bölümünü sağ alt köşeye yerleştiriyoruz
 const TotalSection = styled.div`
   position: absolute;
   bottom: 20px;
   right: 20px;
   display: flex;
-  flex-direction: column; /* Dikey sıralama */
-  align-items: flex-end; /* Sağ tarafa hizalama */
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
-// Seçimler yazısı
 const SelectionsText = styled.p`
   font-size: 1rem;
   color: #555;
-  margin-bottom: 5px; /* Üst boşluk */
+  margin-bottom: 5px;
 `;
 
-// Toplam fiyat yazısı
 const TotalPrice = styled.span`
   font-weight: bold;
   font-size: 1.5rem;
-  color: #d32f2f; /* Kırmızı renk */
+  color: #d32f2f;
 `;
-
-
-
-
 
 const OrderButton = styled.button`
   background-color: #fbc02d;
@@ -214,6 +196,8 @@ function SiparisFormu() {
   const [extras, setExtras] = useState([]);
   const [note, setNote] = useState('');
   const [quantity, setQuantity] = useState(1);
+  const [name, setName] = useState('');
+  const [nameError, setNameError] = useState('');
 
   const handleExtrasChange = (e) => {
     const { value, checked } = e.target;
@@ -221,17 +205,28 @@ function SiparisFormu() {
       checked ? [...prev, value] : prev.filter((item) => item !== value)
     );
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/onay');
+    
+    // İsim kontrolü
+    if (!name || name.length < 3) {
+      setNameError('Lütfen en az 3 karakterlik bir isim girin!');
+      return;
+    }
+  
+    setNameError(''); // Hata mesajını temizle
+    navigate('/onay'); // Formu başarıyla gönder
   };
+  
 
   const calculateTotal = () => {
-    const basePrice = 85.5;
-    const extraPrice = extras.length * 5;
-    return (basePrice + extraPrice) * quantity;
+    const basePrice = 85.5; // Temel pizza fiyatı
+    const extraPrice = extras.length * 5; // Her ekstra malzeme için 5₺ ekliyoruz
+    return (basePrice + extraPrice) * quantity; // Toplam fiyat
   };
+  
 
   return (
     <Container>
@@ -251,131 +246,147 @@ function SiparisFormu() {
       </Header>
 
       <Section>
-        <PositionAbsoluteTitle>Position Absolute Acı Pizza</PositionAbsoluteTitle>
+          <PositionAbsoluteTitle>Position Absolute Acı Pizza</PositionAbsoluteTitle>
 
-        <PriceSection>
-          <Price>85.50₺</Price>
-          <Rating>
-            <span>4.9</span> (200)
-          </Rating>
-        </PriceSection>
+          <PriceSection>
+            <Price>85.50₺</Price>
+            <Rating>
+              <span>4.9</span> (200)
+            </Rating>
+          </PriceSection>
 
-        <Description>
-          Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam
-          sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle
-          kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek
-          sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
-          hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
-          pizetta denir.
-        </Description>
+          <Description>
+            Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam
+            sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle
+            kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek
+            sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
+            hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
+            pizetta denir.
+          </Description>
 
-        <SelectionContainer>
-  {/* Boyut Seç */}
-  <RadioGroup>
-    <RadioLabel>
-      <RedStar>*</RedStar>
-      <span>Boyut Seç</span>
-    </RadioLabel>
-    <RadioButtonContainer>
-      <input
-        type="radio"
-        id="small"
-        value="small"
-        checked={size === 'small'}
-        onChange={(e) => setSize(e.target.value)}
-      />
-      <label htmlFor="small">Küçük</label>
-    </RadioButtonContainer>
-    <RadioButtonContainer>
-      <input
-        type="radio"
-        id="medium"
-        value="medium"
-        checked={size === 'medium'}
-        onChange={(e) => setSize(e.target.value)}
-      />
-      <label htmlFor="medium">Orta</label>
-    </RadioButtonContainer>
-    <RadioButtonContainer>
-      <input
-        type="radio"
-        id="large"
-        value="large"
-        checked={size === 'large'}
-        onChange={(e) => setSize(e.target.value)}
-      />
-      <label htmlFor="large">Büyük</label>
-    </RadioButtonContainer>
-  </RadioGroup>
+          <SelectionContainer>
+            <RadioGroup>
+              <RadioLabel>
+                <RedStar>*</RedStar>
+                <span>Boyut Seç</span>
+              </RadioLabel>
+              <RadioButtonContainer>
+                <input
+                  type="radio"
+                  id="small"
+                  value="small"
+                  checked={size === 'small'}
+                  onChange={(e) => setSize(e.target.value)}
+                />
+                <label htmlFor="small">Küçük</label>
+              </RadioButtonContainer>
+              <RadioButtonContainer>
+                <input
+                  type="radio"
+                  id="medium"
+                  value="medium"
+                  checked={size === 'medium'}
+                  onChange={(e) => setSize(e.target.value)}
+                />
+                <label htmlFor="medium">Orta</label>
+              </RadioButtonContainer>
+              <RadioButtonContainer>
+                <input
+                  type="radio"
+                  id="large"
+                  value="large"
+                  checked={size === 'large'}
+                  onChange={(e) => setSize(e.target.value)}
+                />
+                <label htmlFor="large">Büyük</label>
+              </RadioButtonContainer>
+            </RadioGroup>
 
-  {/* Hamur Seç */}
-  <SelectGroup>
-    <label htmlFor="dough">
-      <RedStar>*</RedStar> Hamur Seç
-    </label>
-    <MultiSelect
-      id="dough"
-      onChange={(e) => setDough(e.target.value)}
-      value={dough}
-    >
-      <option value="">Hamur Türü Seçin</option>
-      <option value="thin">İnce</option>
-      <option value="thick">Kalın</option>
-    </MultiSelect>
-  </SelectGroup>
-</SelectionContainer>
+            <SelectGroup>
+              <label htmlFor="dough">
+                <RedStar>*</RedStar> Hamur Seç
+              </label>
+              <MultiSelect
+                id="dough"
+                onChange={(e) => setDough(e.target.value)}
+                value={dough}
+              >
+                <option value="">Hamur Türü Seçin</option>
+                <option value="thin">İnce</option>
+                <option value="thick">Kalın</option>
+              </MultiSelect>
+            </SelectGroup>
+          </SelectionContainer>
 
+          <h3>Ek Malzemeler</h3>
+          <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
+          <CheckboxGroup>
+            {[
+              'pepperoni',
+              'sosis',
+              'kanada Jambonu',
+              'Tavuk Izgara',
+              'soğan',
+              'domates',
+              'mısır',
+              'sucuk',
+              'jalepeno',
+              'sarımsak',
+              'biber',
+              'ananas',
+              'kabak',
+            ].map((item) => (
+              <CheckboxLabel key={item}>
+                <input
+                  type="checkbox"
+                  value={item}
+                  onChange={handleExtrasChange}
+                />
+                {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
+              </CheckboxLabel>
+            ))}
+          </CheckboxGroup>
 
-        <h3>Ek Malzemeler</h3>
-        <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
-        <CheckboxGroup>
-          {[
-            'pepperoni',
-            'sosis',
-            'kanada Jambonu',
-            'Tavuk Izgara',
-            'soğan',
-            'domates',
-            'mısır',
-            'sucuk',
-            'jalepeno',
-            'sarımsak',
-            'biber',
-            'ananas',
-            'kabak',
-          ].map((item) => (
-            <CheckboxLabel key={item}>
-              <input type="checkbox" value={item} onChange={handleExtrasChange} />
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </CheckboxLabel>
-          ))}
-        </CheckboxGroup>
+          {/* İsim Inputu */}
+          <div>
+            <h3>Adınızı Girin</h3>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Adınızı girin"
+            />
+            {nameError && <p style={{ color: 'red' }}>{nameError}</p>}
+          </div>
 
-        <h3>Sipariş Notu</h3>
-        <Textarea
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-          placeholder="Siparişine eklemek istediğin bir not var mı?"
-        />
+          <h3>Sipariş Notu</h3>
+          <Textarea
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            placeholder="Sipariş notunuzu buraya yazın..."
+          />
 
-        <Divider />
+          <Divider />
 
-        <QuantityControl>
-          <QuantityButton onClick={() => setQuantity(quantity - 1)}>-</QuantityButton>
-          <span>{quantity}</span>
-          <QuantityButton onClick={() => setQuantity(quantity + 1)}>+</QuantityButton>
-        </QuantityControl>
+          <QuantityControl>
+            <label>Adet:</label>
+            <QuantityButton onClick={() => setQuantity(quantity - 1)}>-</QuantityButton>
+            {quantity}
+            <QuantityButton onClick={() => setQuantity(quantity + 1)}>+</QuantityButton>
+          </QuantityControl>
 
-        <TotalSection>
-  <SelectionsText>Seçimler: {extras.length * 5}₺</SelectionsText>
-  <TotalPrice>Toplam: {calculateTotal()}₺</TotalPrice>
-</TotalSection>
+          <TotalSection>
+            <SelectionsText>
+              Seçimler: {extras.length * 5}₺
+            </SelectionsText>
+            <TotalPrice>Toplam: {calculateTotal()}₺</TotalPrice>
+          </TotalSection>
 
+          {/* Sipariş Ver Butonu */}
+          <OrderButton onClick={handleSubmit}>Sipariş Ver</OrderButton>
+        </Section>
+      </Container>
 
-
-        <OrderButton onClick={handleSubmit}>Siparişi Tamamla</OrderButton>
-      </Section>
-    </Container>
   );
 }
 
