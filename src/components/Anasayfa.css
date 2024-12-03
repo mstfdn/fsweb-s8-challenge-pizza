@@ -1,0 +1,47 @@
+.container {
+    text-align: center;
+    padding: 20px;
+    background-image: url('../../Assets/Iteration-1-assets/home-banner.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    color: white; 
+    
+  }
+  
+ 
+  .heading {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+  .sub-text {
+    display: block; 
+    font-size: 70px;
+    margin-top: 10px;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+  
+  .button {
+    padding: 20px 40px 20px 40px;
+    background-color: #fbc02d;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .button:hover {
+    background-color: #f9a825;
+  }
+  
+
+  

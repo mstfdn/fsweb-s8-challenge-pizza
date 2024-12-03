@@ -14,7 +14,6 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Teknolojik Yemekler</h1>
       <Routes>
         <Route path="/" element={<Anasayfa />} />
         <Route path="/siparis" element={<SiparisFormu />} />

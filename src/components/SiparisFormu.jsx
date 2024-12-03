@@ -1,6 +1,6 @@
 // src/components/SiparisFormu.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -175,7 +175,7 @@ function SiparisFormu() {
         <PriceSection>
           <Price>85.50₺</Price>
           <Rating>
-            <span>4.9</span> (200 beğeni aldı)
+            <span>4.9</span> (200)
           </Rating>
         </PriceSection>
 
