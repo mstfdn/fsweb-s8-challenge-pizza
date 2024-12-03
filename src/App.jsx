@@ -11,15 +11,16 @@ const Container = styled.div`
   padding: 20px;
 `;
 
+
 function App() {
   return (
-    <Container>
+    
       <Routes>
         <Route path="/" element={<Anasayfa />} />
         <Route path="/siparis" element={<SiparisFormu />} />
         <Route path="/onay" element={<SiparisOnayi />} />
       </Routes>
-    </Container>
+    
   );
 }
 
