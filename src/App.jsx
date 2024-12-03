@@ -6,10 +6,7 @@ import SiparisOnayi from './components/SiparisOnayi'; {/* SiparisOnayi import ed
 import styled from 'styled-components';
 import Anasayfa from './components/Anasayfa'; {/* Anasayfa import edilmeli */}
 
-const Container = styled.div`
-  text-align: center;
-  padding: 20px;
-`;
+
 
 
 function App() {

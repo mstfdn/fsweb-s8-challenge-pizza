@@ -203,6 +203,12 @@ const OrderButton = styled.button`
   }
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Optional: add margin for spacing */
+`;
+
 function SiparisFormu() {
   const navigate = useNavigate();
   const [size, setSize] = useState('');
@@ -394,7 +400,9 @@ function SiparisFormu() {
           </TotalSection>
 
           {/* Sipariş Ver Butonu */}
+          <ButtonContainer>
           <OrderButton onClick={handleSubmit}>Sipariş Ver</OrderButton>
+        </ButtonContainer>
         </Section>
       </Container>
   );
