@@ -10,6 +10,7 @@ const Container = styled.div`
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   background-color: #CE2829;
   color: white;
@@ -18,6 +19,15 @@ const Header = styled.header`
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
+`;
+
+const NavLink = styled.a`
+  color: white;
+  text-decoration: none;
+  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Section = styled.section`
@@ -148,7 +158,6 @@ function SiparisFormu() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Sipariş verildiğinde, kullanıcının sipariş onay sayfasına yönlendirilmesi
-    
     navigate('/onay'); // Redirect to the SiparisOnayi page
   };
 
@@ -164,8 +173,9 @@ function SiparisFormu() {
       <Header>
         <h1>Teknolojik Yemekler</h1>
         <Nav>
-          <a href="/">Anasayfa</a>
-          <a href="/siparis">Sipariş Oluştur</a>
+          <NavLink href="/" bold={false}>Anasayfa</NavLink>
+          <NavLink href="/seçenekler" bold={false}>Seçenekler</NavLink>
+          <NavLink href="/siparis" bold={true}>Sipariş Oluştur</NavLink>
         </Nav>
       </Header>
 
@@ -180,7 +190,7 @@ function SiparisFormu() {
         </PriceSection>
 
         <Description>
-        Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizetta denir.
+          Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizetta denir.
         </Description>
 
         <RadioGroup>
@@ -227,7 +237,7 @@ function SiparisFormu() {
         <h3>Ek Malzemeler</h3>
         <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
         <CheckboxGroup>
-          {['pepperoni', 'sosis', 'kanadaJambonu', 'tavukIzgara', 'soğan', 'domates', 'mısır', 'sucuk', 'jalepeno', 'sarımsak', 'biber', 'ananas', 'kabak'].map((item) => (
+          {['pepperoni', 'sosis', 'kanada Jambonu', 'Tavuk Izgara', 'soğan', 'domates', 'mısır', 'sucuk', 'jalepeno', 'sarımsak', 'biber', 'ananas', 'kabak'].map((item) => (
             <CheckboxLabel key={item}>
               <input
                 type="checkbox"
