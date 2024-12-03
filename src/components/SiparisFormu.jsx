@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 // Ana konteyner bileşeni
 const Container = styled.div`
   font-family: Arial, sans-serif;
