@@ -11,17 +11,26 @@ const Container = styled.div`
   background-position: center;
   height: 100vh;
   color: white;
+  
 `;
 
 const Heading = styled.h1`
-  font-size: 70px;
+  font-size: 60px;
   font-weight: bold;
   margin-bottom: 20px;
-  font-family: "Barlow", serif;
+  font-family: "Roboto Mono", serif;
   font-weight: 100;
 `;
 
 const SubText = styled.span`
+  display: block;
+  font-size: 70px;
+  margin-top: 50px;
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+`;
+
+const SubTextiki = styled.span`
   display: block;
   font-size: 70px;
   margin-top: 10px;
@@ -29,12 +38,22 @@ const SubText = styled.span`
   font-optical-sizing: auto;
 `;
 
+const SubTextuc = styled.span`
+  display: block;
+  font-size: 20px;
+  margin-top: 50px;
+  font-family: "Satisfy", serif;
+  font-weight: 900;
+  font-style: oblique;
+  color: yellow;
+`;
+
 const Button = styled.button`
-  padding: 20px 40px;
+  padding: 20px 60px;
   background-color: #fbc02d;
   border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 40px;
+  font-size: 24px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -48,10 +67,12 @@ const Anasayfa = () => {
     <Container>
       <Heading>
         Teknolojik Yemekler
-        <SubText>KOD ACIKTIRIR PİZZA DOYURUR.</SubText>
+        <SubTextuc>fırsatı kaçırma </SubTextuc>
+        <SubText>KOD ACIKTIRIR </SubText>
+        <SubTextiki>PİZZA, DOYURUR.</SubTextiki>
       </Heading>
       <Link to="/siparis">
-        <Button>Acıktım!</Button>
+        <Button>ACIKTIM</Button>
       </Link>
     </Container>
   );

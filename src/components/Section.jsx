@@ -24,6 +24,7 @@ const NavItem = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  
 
   &:hover {
     background-color: ${(props) => (props.active ? "#f9a825" : "#f0f0f0")};
@@ -41,13 +42,18 @@ const NavIcon = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
+  justify-content: center; /* Yatayda ortaya hizalama */
+  align-items: center; /* Dikeyde hizalama */
   gap: 20px;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Küçük ekranlar için dikey hizalama */
+  }
 `;
 
 const LargeImage = styled.div`
   position: relative;
-  flex: 1;
   background-image: url("../Assets/Iteration-2-aseets/cta/kart-1.png");
   background-size: cover;
   background-position: center;
@@ -59,7 +65,6 @@ const LargeImage = styled.div`
 const SmallImagesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
   gap: 20px;
 `;
 
@@ -82,6 +87,7 @@ const SmallImageiki = styled.div`
   width: 508px;
   border-radius: 10px;
 `;
+
 
 const CenterText = styled.h2`
   text-align: center;
@@ -214,7 +220,7 @@ const Section = () => {
       <Navbar>
         <NavItem>
           <NavIcon src="../Assets/Iteration-2-aseets/icons/1.svg" />
-          YENİ Kore
+          YENİ! Kore
         </NavItem>
         <NavItem active>
           <NavIcon src="../Assets/Iteration-2-aseets/icons/2.svg" />
