@@ -29,13 +29,14 @@ const FooterContent = styled.div`
 const FooterColumn = styled.div`
   flex: 1;
   padding: 10px;
+  font-weight: bold; 
 `;
 
 // Footer title style with flex for logos and text alignment
 const FooterTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 10px;
-  font-weight: bold; /* This makes "Teknolojik Yemekler" and "Sıccacıkk Menüler" bold */
+  font-weight: bold; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,8 +53,8 @@ const FooterLink = styled.a`
   display: block;
   color: white;
   text-decoration: none;
-  margin-bottom: 5px;
-  font-weight: normal; /* Makes the footer links normal weight */
+  margin-bottom: 10px;
+  font-weight: normal;
 
   &:hover {
     text-decoration: underline;

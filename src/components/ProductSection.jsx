@@ -52,14 +52,15 @@ const ProductCard = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  width: 250px;
+  width: 350px;
+  
 `;
 
 const ProductImage = styled.div`
   background-image: url("../Assets/Iteration-2-aseets/pictures/food-1.png");
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 350px;
   border-radius: 10px;
   margin-bottom: 10px;
 `;
@@ -68,7 +69,7 @@ const ProductImageiki = styled.div`
   background-image: url("../Assets/Iteration-2-aseets/pictures/food-2.png");
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 350px;
   border-radius: 10px;
   margin-bottom: 10px;
 `;
@@ -77,27 +78,43 @@ const ProductImageuc = styled.div`
   background-image: url("../Assets/Iteration-2-aseets/pictures/food-3.png");
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 350px;
   border-radius: 10px;
   margin-bottom: 10px;
 `;
 
+const ProductDetails = styled.div`
+  display: flex;
+  flex-direction: column; /* Dikey olarak sıralama */
+  justify-content: flex-start; /* Öğeleri yukarıya hizalar */
+  align-items: center; /* Ortalar */
+  margin-top: 10px;
+  gap: 10px; /* Aralarındaki boşluğu ayarlamak için */
+`;
+
 const ProductTitle = styled.h3`
   font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0;
+  font-weight: normal;
+  margin: 0;
+  white-space: nowrap; /* Tek satırda tutar */
+  flex: 2; /* Diğer elemanlara göre daha fazla yer kaplamasını sağlar */
 `;
 
 const ProductRating = styled.div`
   font-size: 14px;
-  margin: 5px 0;
+  text-align: center; /* Ortalar */
+  white-space: nowrap;
 `;
 
 const ProductPrice = styled.div`
   font-size: 18px;
   font-weight: bold;
-  color: #f44336;
+  color: black;
+  text-align: center; /* Ortalar */
 `;
+
+
+
 
 const ProductSection = () => {
   return (
@@ -130,24 +147,32 @@ const ProductSection = () => {
       </Navbar>
 
       <Products>
-        <ProductCard>
-          <ProductImage />
-          <ProductTitle>Terminal Pizza</ProductTitle>
-          <ProductRating>4.9 ⭐ (200)</ProductRating>
-          <ProductPrice>60₺</ProductPrice>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageiki />
-          <ProductTitle>Position Absolute Acı Pizza</ProductTitle>
-          <ProductRating>4.9 ⭐ (828)</ProductRating>
-          <ProductPrice>85₺</ProductPrice>
-        </ProductCard>
-        <ProductCard>
-          <ProductImageuc />
-          <ProductTitle>useEffect Tavuklu Burger</ProductTitle>
-          <ProductRating>4.9 ⭐ (462)</ProductRating>
-          <ProductPrice>75₺</ProductPrice>
-        </ProductCard>
+      <ProductCard>
+  <ProductImage />
+  <ProductDetails>
+    <ProductTitle>Terminal Pizza</ProductTitle>
+    <ProductRating>4.9 ⭐ (200)</ProductRating>
+    <ProductPrice>60₺</ProductPrice>
+  </ProductDetails>
+</ProductCard>
+<ProductCard>
+  <ProductImageiki />
+  <ProductDetails>
+    <ProductTitle>Position Absolute Acı Pizza</ProductTitle>
+    <ProductRating>4.9 ⭐ (828)</ProductRating>
+    <ProductPrice>85₺</ProductPrice>
+  </ProductDetails>
+</ProductCard>
+<ProductCard>
+  <ProductImageuc />
+  <ProductDetails>
+    <ProductTitle>useEffect Tavuklu Burger</ProductTitle>
+    <ProductRating>4.9 ⭐ (462)</ProductRating>
+    <ProductPrice>75₺</ProductPrice>
+  </ProductDetails>
+</ProductCard>
+
+
       </Products>
     </ProductContainer>
   );

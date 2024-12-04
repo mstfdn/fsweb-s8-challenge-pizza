@@ -9,7 +9,7 @@ const Container = styled.div`
   background-image: url("../../Assets/Iteration-1-assets/home-banner.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 80vh;
   color: white;
   
 `;
