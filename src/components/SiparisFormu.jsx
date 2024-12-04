@@ -10,17 +10,46 @@ const Container = styled.div`
 
 const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #CE2829;
+  padding: 20px 0;
   color: white;
-  flex-direction: column;
+  background-color: red;
+  position: relative; /* Header'ın pozisyonu ayarlandı */
+  z-index: 2;
 `;
 
-const Nav = styled.nav`
+const HeaderImage = styled.img`
+  width: 70%;
+  height: 300px;
+  object-fit: cover;
+  position: absolute;
+  bottom: -100px;
+  z-index: -1;
+  clip-path: ellipse(60% 60% at 50% 100%); /* Pizzanın alt yarısını göstermek için clip-path */
+`;
+
+const PizzaImageSection = styled.section`
+  display: flex;
+  justify-content: center;
+  margin-top: -100px; /* Header'ın üstünden mesafe */
+`;
+
+const PizzaImage = styled.img`
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+`;
+
+const NavContainer = styled.div`
+  position: absolute;
+  top: 20px; /* Başlık ile biraz mesafe bırakmak için */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 20px;
+  z-index: 1; /* Yine başlığın üstünde görünmesi için z-index */
 `;
 
 const NavLink = styled.a`
@@ -106,10 +135,7 @@ const SelectGroup = styled.div`
   gap: 5px;
 `;
 
-const MultiSelect = styled.select`
-  padding: 5px;
-  margin-left: 10px;
-`;
+
 
 const CheckboxGroup = styled.div`
   display: grid;
@@ -259,19 +285,13 @@ function SiparisFormu() {
     <Container>
       <Header>
         <h1>Teknolojik Yemekler</h1>
-        <Nav>
-          <NavLink href="/" bold={false}>
-            Anasayfa
-          </NavLink>
-          <NavLink href="/seçenekler" bold={false}>
-            Seçenekler
-          </NavLink>
-          <NavLink href="/siparis" bold={true}>
-            Sipariş Oluştur
-          </NavLink>
-        </Nav>
       </Header>
-
+      <PizzaImageSection>
+        <PizzaImage
+          src="../Assets/Iteration-2-aseets/pictures/form-banner.png"
+          alt="Pizza"
+        />
+      </PizzaImageSection>
       <Section>
         <PositionAbsoluteTitle>Position Absolute Acı Pizza</PositionAbsoluteTitle>
 
