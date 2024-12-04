@@ -18,15 +18,26 @@ const NavItem = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  background-color: ${(props) => (props.active ? "#fbc02d" : "white")};
-  color: ${(props) => (props.active ? "white" : "#333")};
-  border: ${(props) => (props.active ? "none" : "1px solid #ccc")};
+  background-color: ${(props) => (props.active ? "#white" : "white")};
+  color: ${(props) => (props.active ? "black" : "#333")};
+  border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   &:hover {
     background-color: ${(props) => (props.active ? "#f9a825" : "#f0f0f0")};
   }
+`;
+
+const NavIcon = styled.div`
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-image: url(${(props) => props.src});
+  background-size: cover;
+  background-position: center;
 `;
 
 const ImageContainer = styled.div`
@@ -74,12 +85,30 @@ const Section = () => {
   return (
     <SectionContainer>
       <Navbar>
-        <NavItem>YENİ Kore</NavItem>
-        <NavItem active>Pizza</NavItem>
-        <NavItem>Burger</NavItem>
-        <NavItem>Kızartmalar</NavItem>
-        <NavItem>Fast food</NavItem>
-        <NavItem>Gazlı İçecek</NavItem>
+        <NavItem>
+          <NavIcon src="../Assets/Iteration-2-aseets/icons/1.svg" />
+          YENİ Kore
+        </NavItem>
+        <NavItem active>
+          <NavIcon src="../Assets/Iteration-2-aseets/icons/2.svg" />
+          Pizza
+        </NavItem>
+        <NavItem>
+          <NavIcon src="../Assets/Iteration-2-aseets/icons/3.svg" />
+          Burger
+        </NavItem>
+        <NavItem>
+          <NavIcon src="../Assets/Iteration-2-aseets/icons/4.svg" />
+          Kızartmalar
+        </NavItem>
+        <NavItem>
+          <NavIcon src="../Assets/Iteration-2-aseets/icons/5.svg" />
+          Fast food
+        </NavItem>
+        <NavItem>
+          <NavIcon src="../Assets/Iteration-2-aseets/icons/6.svg" />
+          Gazlı İçecek
+        </NavItem>
       </Navbar>
 
       <ImageContainer>
