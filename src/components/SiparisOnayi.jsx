@@ -155,11 +155,11 @@ const SiparisOnayi = () => {
         <>
           <OrderDetails>
             <OrderTitle>Position Absolute Acı Pizza</OrderTitle>
-            <OrderDetailItem>Boyut: {orderDetails.size.charAt(0).toUpperCase() + orderDetails.size.slice(1)}</OrderDetailItem>
-            <OrderDetailItem>Hamur: {orderDetails.dough.charAt(0).toUpperCase() + orderDetails.dough.slice(1)}</OrderDetailItem>
-            <OrderDetailItem>Ek Malzemeler: {orderDetails.extras.join(', ')}</OrderDetailItem>
-            <OrderDetailItem>Sipariş Notu: {orderDetails.note}</OrderDetailItem>
-            <OrderDetailItem>Adet: {orderDetails.quantity}</OrderDetailItem>
+            <OrderDetailItem><span>Boyut:</span> <strong>{orderDetails.size.charAt(0).toUpperCase() + orderDetails.size.slice(1)}</strong></OrderDetailItem>
+            <OrderDetailItem><span>Hamur:</span> <strong>{orderDetails.dough.charAt(0).toUpperCase() + orderDetails.dough.slice(1)}</strong></OrderDetailItem>
+            <OrderDetailItem><span>Ek Malzemeler:</span> <strong>{orderDetails.extras.join(', ')}</strong></OrderDetailItem>
+            <OrderDetailItem><span>Sipariş Notu:</span> <strong>{orderDetails.note}</strong></OrderDetailItem>
+            <OrderDetailItem><span>Adet:</span> <strong>{orderDetails.quantity}</strong></OrderDetailItem>
           </OrderDetails>
           <TotalSection>
             <TotalItem>Sipariş Toplamı</TotalItem>
