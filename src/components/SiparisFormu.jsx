@@ -43,24 +43,38 @@ const PizzaImage = styled.img`
 `;
 
 const NavContainer = styled.div`
-  position: absolute;
-  top: 20px; /* Başlık ile biraz mesafe bırakmak için */
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  gap: 20px;
-  z-index: 1; /* Yine başlığın üstünde görünmesi için z-index */
+  justify-content: flex-start;
+  gap: 5px; /* Öğeler arasındaki boşluk */
+  margin: 20px 0;
+  padding-left: 20px; /* Section ile hizalamak için sol boşluk */
 `;
 
 const NavLink = styled.a`
-  color: white;
+  color: ${(props) => (props.isRed ? 'red' : 'black')};
   text-decoration: none;
   font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
+  font-size: 1rem; /* Section yazı boyutuna uygun hale getirildi */
+  line-height: 1.5; /* Daha düzgün hizalama için satır yüksekliği */
+  position: relative;
+
+  &:after {
+    content: '-';
+    color: black;
+    margin-left: 3px; /* Çizgi ile metin arasındaki boşluk */
+  }
+
+  &:last-child:after {
+    content: ''; /* Son öğede çizgiyi kaldır */
+  }
 
   &:hover {
     text-decoration: underline;
   }
 `;
+
+
+
 
 const Section = styled.section`
   position: relative;
@@ -292,6 +306,13 @@ function SiparisFormu() {
           alt="Pizza"
         />
       </PizzaImageSection>
+      <NavContainer>
+        <NavLink href="/">Anasayfa</NavLink>
+        <NavLink href="/secenekler">Seçenekler</NavLink>
+        <NavLink href="/siparisolustur" isRed>
+          Sipariş Oluştur
+        </NavLink>
+      </NavContainer>
       <Section>
         <PositionAbsoluteTitle>Position Absolute Acı Pizza</PositionAbsoluteTitle>
 
