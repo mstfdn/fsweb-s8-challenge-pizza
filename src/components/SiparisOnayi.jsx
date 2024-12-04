@@ -30,7 +30,6 @@ const Header = styled.h1`
   }
 `;
 
-
 const SuccessSubtext = styled.h3`
   font-size: 3rem;
   font-weight: lighter;
@@ -46,15 +45,25 @@ const SuccessSubtext = styled.h3`
   }
 `;
 
+const Divider = styled.div`
+  width: 50%;
+  border-bottom: 2px solid white;
+  margin: 20px 0;
+`;
+
+const OrderTitle = styled.h2`
+  text-align: center;
+`;
+
 const OrderDetails = styled.div`
-  text-align: left;
   margin: 30px 0;
-  background: yellow;
-  color: black;
+  background: transparent;
+  color: white;
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
   width: 100%;
+  text-align: center;
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -68,6 +77,9 @@ const OrderDetails = styled.div`
 const OrderDetailItem = styled.p`
   margin: 5px 0;
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: left;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
@@ -80,13 +92,16 @@ const OrderDetailItem = styled.p`
 
 const TotalSection = styled.div`
   margin-top: 20px;
-  background: yellow;
-  color: black;
+  color: white;
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
   width: 100%;
   text-align: right;
+  width: 50%; 
+  border: 1px solid white; /* Border genişliği 1 piksel */ 
+  margin: 20px 0;
+
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -100,6 +115,9 @@ const TotalSection = styled.div`
 const TotalItem = styled.p`
   margin: 5px 0;
   font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -115,8 +133,7 @@ const MiniNote = styled.p`
   font-family: "Satisfy", cursive;
   font-weight: 400;
   font-style: normal;
-`
-
+`;
 
 const SiparisOnayi = () => {
   const [orderDetails, setOrderDetails] = useState(null);
@@ -133,20 +150,21 @@ const SiparisOnayi = () => {
       <Header>Teknolojik Yemekler</Header>
       <MiniNote>Lezzetin Yolda</MiniNote>
       <SuccessSubtext>SİPARİŞ ALINDI</SuccessSubtext>
+      <Divider />
       {orderDetails && (
         <>
           <OrderDetails>
-            <OrderDetailItem>Pizza: Position Absolute Acı Pizza</OrderDetailItem>
+            <OrderTitle>Position Absolute Acı Pizza</OrderTitle>
             <OrderDetailItem>Boyut: {orderDetails.size.charAt(0).toUpperCase() + orderDetails.size.slice(1)}</OrderDetailItem>
             <OrderDetailItem>Hamur: {orderDetails.dough.charAt(0).toUpperCase() + orderDetails.dough.slice(1)}</OrderDetailItem>
             <OrderDetailItem>Ek Malzemeler: {orderDetails.extras.join(', ')}</OrderDetailItem>
             <OrderDetailItem>Sipariş Notu: {orderDetails.note}</OrderDetailItem>
             <OrderDetailItem>Adet: {orderDetails.quantity}</OrderDetailItem>
-            <OrderDetailItem><strong>Sipariş Veren:</strong> {orderDetails.name}</OrderDetailItem>
           </OrderDetails>
           <TotalSection>
-            <TotalItem>Seçimler: {orderDetails.extras.length * 5}₺</TotalItem>
-            <TotalItem>Toplam: {orderDetails.totalPrice}₺</TotalItem>
+            <TotalItem>Sipariş Toplamı</TotalItem>
+            <TotalItem>Seçimler {orderDetails.extras.length * 5}₺</TotalItem>
+            <TotalItem>Toplam {orderDetails.totalPrice}₺</TotalItem>
           </TotalSection>
         </>
       )}

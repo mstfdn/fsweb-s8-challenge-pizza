@@ -295,32 +295,32 @@ function SiparisFormu() {
             <RadioButtonContainer>
               <input
                 type="radio"
-                id="small"
-                value="small"
-                checked={size === 'small'}
+                id="küçük"
+                value="küçük"
+                checked={size === 'küçük'}
                 onChange={(e) => setSize(e.target.value)}
               />
-              <label htmlFor="small">Küçük</label>
+              <label htmlFor="küçük">Küçük</label>
             </RadioButtonContainer>
             <RadioButtonContainer>
               <input
                 type="radio"
-                id="medium"
-                value="medium"
-                checked={size === 'medium'}
+                id="orta"
+                value="orta"
+                checked={size === 'orta'}
                 onChange={(e) => setSize(e.target.value)}
               />
-              <label htmlFor="medium">Orta</label>
+              <label htmlFor="orta">Orta</label>
             </RadioButtonContainer>
             <RadioButtonContainer>
               <input
                 type="radio"
-                id="large"
-                value="large"
-                checked={size === 'large'}
+                id="büyük"
+                value="büyük"
+                checked={size === 'büyük'}
                 onChange={(e) => setSize(e.target.value)}
               />
-              <label htmlFor="large">Büyük</label>
+              <label htmlFor="büyük">Büyük</label>
             </RadioButtonContainer>
           </RadioGroup>
 
@@ -334,8 +334,8 @@ function SiparisFormu() {
               onChange={(e) => setDough(e.target.value)}
             >
               <option value="">Hamur Türü Seçin</option>
-              <option value="thin">İnce</option>
-              <option value="thick">Kalın</option>
+              <option value="ince">İnce</option>
+              <option value="kalın">Kalın</option>
             </select>
           </SelectGroup>
         </SelectionContainer>
