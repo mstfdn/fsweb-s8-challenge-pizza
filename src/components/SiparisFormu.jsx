@@ -94,7 +94,7 @@ const PriceSection = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 `;
 
 const Price = styled.span`
