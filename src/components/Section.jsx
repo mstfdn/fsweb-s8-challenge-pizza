@@ -1,4 +1,3 @@
-// src/components/Section.jsx
 import React from "react";
 import styled from "styled-components";
 
@@ -47,38 +46,166 @@ const ImageContainer = styled.div`
 `;
 
 const LargeImage = styled.div`
+  position: relative;
   flex: 1;
   background-image: url("../Assets/Iteration-2-aseets/cta/kart-1.png");
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 446px;
+  width: 514px;
   border-radius: 10px;
 `;
 
-const SmallImage = styled.div`
+const SmallImagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  gap: 20px;
+`;
+
+const SmallImage = styled.div`
+  position: relative;
   background-image: url("../Assets/Iteration-2-aseets/cta/kart-2.png");
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 200px;
+  width: 500px;
   border-radius: 10px;
 `;
 
 const SmallImageiki = styled.div`
-  flex: 1;
+  position: relative;
   background-image: url("../Assets/Iteration-2-aseets/cta/kart-3.png");
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 200px;
+  width: 508px;
   border-radius: 10px;
 `;
 
 const CenterText = styled.h2`
   text-align: center;
   font-size: 24px;
-  margin: 40px 0;
+  margin: -1rem;
+  color: red;
+  font-family: "Satisfy", serif;
+  font-weight: 900;
+  font-style: oblique;
+`;
+
+const SubText = styled.p`
+  text-align: center;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 32px;
+  margin: 2rem;
   font-weight: bold;
   color: #333;
+`;
+
+const Heading = styled.h3`
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  color: white;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+`;
+
+const Headingiki = styled.h3`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+`;
+
+const Headinguc = styled.h3`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+`;
+
+const Subheading = styled.p`
+  position: absolute;
+  bottom: 250px;
+  left: 30px;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+`;
+
+const Subheadingiki = styled.p`
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+`;
+
+const Subheadinguc = styled.p`
+  position: absolute;
+  bottom: 105px;
+  right: 320px;
+  color: black;
+  font-size: 20px;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+`;
+
+const Subheadingdrt = styled.p`
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  color: black;
+  font-size: 18px;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+`;
+
+const Button = styled.button`
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 15px 25px;
+  background-color: white;
+  color: red;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #f9a825;
+  }
+`;
+
+const Buttoniki = styled.button`
+  position: absolute;
+  bottom: 210px;
+  left: 30px;
+  padding: 15px 25px;
+  background-color: white;
+  color: red;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #f9a825;
+  }
 `;
 
 const Section = () => {
@@ -112,12 +239,28 @@ const Section = () => {
       </Navbar>
 
       <ImageContainer>
-        <LargeImage />
-        <SmallImage />
-        <SmallImageiki />
+        <LargeImage>
+          <Heading>Özel Lezzetus</Heading>
+          <Subheading>Position: Absolute Acı Burger</Subheading>
+          <Buttoniki>SİPARİŞ VER</Buttoniki>
+        </LargeImage>
+        <SmallImagesContainer>
+          <SmallImage>
+            <Headingiki>Hackathlon</Headingiki>
+            <Subheadingiki>Burger Menü</Subheadingiki>
+            <Button>SİPARİŞ VER</Button>
+          </SmallImage>
+          <SmallImageiki>
+            <Headinguc style={{ color: "red" }}>Çoooook </Headinguc>
+            <Subheadinguc>hızlı </Subheadinguc>
+            <Subheadingdrt>npm gibi kurye</Subheadingdrt>
+            <Button>SİPARİŞ VER</Button>
+          </SmallImageiki>
+        </SmallImagesContainer>
       </ImageContainer>
 
       <CenterText>en çok paketlenen menüler</CenterText>
+      <SubText>Acıktıran Kodlara Doyuran Lezzetler</SubText>
     </SectionContainer>
   );
 };
