@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 // Footer container
 const FooterContainer = styled.footer`
   background-color: #000;
