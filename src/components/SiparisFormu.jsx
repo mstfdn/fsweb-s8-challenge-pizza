@@ -1,4 +1,3 @@
-// src/components/SiparisFormu.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -114,19 +113,19 @@ const MultiSelect = styled.select`
 
 const CheckboxGroup = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 sütunlu grid */
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  justify-content: flex-start; /* Sol hizalama */
+  justify-content: flex-start;
 `;
 
 const SectionTitle = styled.h3`
-  text-align: left; /* Align the title to the left */
-  width: 100%; /* Ensure it takes the full width of the container */
+  text-align: left;
+  width: 100%;
 `;
 
 const InfoText = styled.p`
-  text-align: left; /* Align the text to the left */
-  width: 100%; /* Ensure it takes the full width of the container */
+  text-align: left;
+  width: 100%;
 `;
 
 const CheckboxLabel = styled.label`
@@ -206,7 +205,7 @@ const OrderButton = styled.button`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Optional: add margin for spacing */
+  margin-top: 20px;
 `;
 
 function SiparisFormu() {
@@ -228,21 +227,32 @@ function SiparisFormu() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // İsim kontrolü
+
     if (!name || name.length < 3) {
       setNameError('Lütfen en az 3 karakterlik bir isim girin!');
       return;
     }
-  
-    setNameError(''); // Hata mesajını temizle
-    navigate('/onay'); // Formu başarıyla gönder
+
+    setNameError('');
+
+    // Sipariş bilgilerini yerel depolamada sakla
+    const orderDetails = {
+      size,
+      dough,
+      extras,
+      note,
+      quantity,
+      totalPrice: calculateTotal(),
+    };
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+
+    navigate('/onay');
   };
 
   const calculateTotal = () => {
-    const basePrice = 85.5; // Temel pizza fiyatı
-    const extraPrice = extras.length * 5; // Her ekstra malzeme için 5₺ ekliyoruz
-    return (basePrice + extraPrice) * quantity; // Toplam fiyat
+    const basePrice = 85.5;
+    const extraPrice = extras.length * 5;
+    return (basePrice + extraPrice) * quantity;
   };
 
   return (
@@ -273,12 +283,7 @@ function SiparisFormu() {
         </PriceSection>
 
         <Description>
-          Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam
-          sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle
-          kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek
-          sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
-          hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen
-          pizetta denir.
+          Frontend Dev olarak hala position absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizetta denir.
         </Description>
 
         <SelectionContainer>
@@ -328,6 +333,7 @@ function SiparisFormu() {
               value={dough}
               onChange={(e) => setDough(e.target.value)}
             >
+              <option value="">Hamur Türü Seçin</option>
               <option value="thin">İnce</option>
               <option value="thick">Kalın</option>
             </select>
@@ -335,76 +341,74 @@ function SiparisFormu() {
         </SelectionContainer>
 
         <SectionTitle>Ek Malzemeler</SectionTitle>
-  <InfoText>En Fazla 10 malzeme seçebilirsiniz. 5₺</InfoText>
-  
-  <CheckboxGroup>
-  {[
-    'pepperoni',
-    'sosis',
-    'kanada Jambonu',
-    'Tavuk Izgara',
-    'soğan',
-    'domates',
-    'mısır',
-    'sucuk',
-    'jalepeno',
-    'sarımsak',
-    'biber',
-    'ananas',
-    'kabak',
-  ].map((item) => (
-    <CheckboxLabel key={item}>
-      <input
-        type="checkbox"
-        value={item}
-        onChange={handleExtrasChange}
-      />
-      {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
-    </CheckboxLabel>
-  ))}
-</CheckboxGroup>
+        <InfoText>En Fazla 10 malzeme seçebilirsiniz. 5₺</InfoText>
 
-          {/* İsim Inputu */}
-          <div>
-            <h3>Adınızı Girin</h3>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Adınızı girin"
-            />
-            {nameError && <p style={{ color: 'red' }}>{nameError}</p>}
-          </div>
+        <CheckboxGroup>
+          {[
+            'Pepperoni',
+            'Sosis',
+            'Kanada Jambonu',
+            'Tavuk Izgara',
+            'Soğan',
+            'Domates',
+            'Mısır',
+            'Sucuk',
+            'Jalepeno',
+            'Sarımsak',
+            'Biber',
+            'Ananas',
+            'Kabak',
+          ].map((item) => (
+            <CheckboxLabel key={item}>
+              <input
+                type="checkbox"
+                value={item}
+                onChange={handleExtrasChange}
+              />
+              {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
+            </CheckboxLabel>
+          ))}
+        </CheckboxGroup>
 
-          <h3>Sipariş Notu</h3>
-          <Textarea
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="Sipariş notunuzu buraya yazın..."
+        <div>
+          <h3>Adınızı Girin</h3>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Adınızı girin"
           />
+          {nameError && <p style={{ color: 'red' }}>{nameError}</p>}
+        </div>
 
-          <Divider />
+        <h3>Sipariş Notu</h3>
+        <Textarea
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          placeholder="Sipariş notunuzu buraya yazın..."
+        />
 
-          <QuantityControl>
-            <label>Adet:</label>
-            <QuantityButton onClick={() => setQuantity(quantity - 1)}>-</QuantityButton>
-            {quantity}
-            <QuantityButton onClick={() => setQuantity(quantity + 1)}>+</QuantityButton>
-          </QuantityControl>
+        <Divider />
 
-          <TotalSection>
-            <SelectionsText>
-              Seçimler: {extras.length * 5}₺
-            </SelectionsText>
-            <TotalPrice>Toplam: {calculateTotal()}₺</TotalPrice>
-          </TotalSection>
+        <QuantityControl>
+          <label>Adet:</label>
+          <QuantityButton onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</QuantityButton>
+          {quantity}
+          <QuantityButton onClick={() => setQuantity(quantity + 1)}>+</QuantityButton>
+        </QuantityControl>
 
-          {/* Sipariş Ver Butonu */}
-          <ButtonContainer>
+        <TotalSection>
+          <SelectionsText>
+            Seçimler: {extras.length * 5}₺
+          </SelectionsText>
+          <TotalPrice>Toplam: {calculateTotal()}₺</TotalPrice>
+        </TotalSection>
+
+        <ButtonContainer>
           <OrderButton onClick={handleSubmit}>Sipariş Ver</OrderButton>
         </ButtonContainer>
-        </Section>
-      </Container>
+      </Section>
+    </Container>
   );
 }
 
