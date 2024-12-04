@@ -6,6 +6,7 @@ import Section from "./components/Section";
 import ProductSection from "./components/ProductSection";
 import SiparisFormu from "./components/SiparisFormu";
 import SiparisOnayi from "./components/SiparisOnayi";
+import Footer from './components/Footer'; 
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Anasayfa />
           <Section />
           <ProductSection />
+          <Footer />
         </>} />
         <Route path="/siparis" element={<SiparisFormu />} />
         <Route path="/onay" element={<SiparisOnayi />} />
