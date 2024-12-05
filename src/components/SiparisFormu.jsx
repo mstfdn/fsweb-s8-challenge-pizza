@@ -200,9 +200,9 @@ const QuantityControl = styled.div`
 `;
 
 const QuantityButton = styled.button`
-  padding: 10px 20px; 
+  padding: 10px 20px; /* Daha büyük iç boşluk */
   margin: 0 10px;
-  background-color: #fbc02d;
+  background-color: #dbd9d5;
   border: none;
   border-radius: 10px; 
   cursor: pointer;
@@ -225,17 +225,41 @@ const TotalSection = styled.div`
   align-items: flex-end;
 `;
 
+const EndSection = styled.div`
+  position: absolute; /* Konumlandırmayı serbest bırakır */
+  right: 5px;
+  bottom: -200px;
+  border: 1px  black;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  padding-left: 40px; /* Sol taraftan ekstra boşluk ekleyerek border'ı genişletir */
+  display: flex;
+  flex-direction: column; /* Alt alta dizme */
+  align-items: flex-start; /* Sağ tarafa hizalama */
+  background-color: #f5f1e6; /* Border arka plan rengini #f5f1e6 yapar */
+`;
+
+
+
 const SelectionsText = styled.p`
   font-size: 1rem;
   color: #555;
   margin-bottom: 5px;
+  font-weight: bold;
+  
 `;
 
 const TotalPrice = styled.span`
   font-weight: bold;
   font-size: 1.5rem;
   color: #d32f2f;
+  margin-bottom: 10px; /* Price ile buton arasına boşluk ekler */
 `;
+
+const TotalOrder = styled.p`
+  font-size: 24px;
+`
 
 const OrderButton = styled.button`
   background-color: #fbc02d;
@@ -254,11 +278,14 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
-
+  box-sizing: border-box;
+  
   button {
-    width: 200px; /* Genişliği artırır */
+    width: 400px; /* Genişliği artırır */
     height: 60px; /* Yüksekliği artırır */
     font-size: 1.5rem; /* Yazı boyutunu büyütür */
+    color: black; /* Yazı rengini siyah yapar */
+    font-weight: bold; /* Yazıyı kalın (bold) yapar */
   }
 `;
 
@@ -451,19 +478,19 @@ function SiparisFormu() {
         <Divider />
 
         <QuantityControl>
-          
           <QuantityButton onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</QuantityButton>
           {quantity}
           <QuantityButton onClick={() => setQuantity(quantity + 1)}>+</QuantityButton>
         </QuantityControl>
 
-        <TotalSection>
-          <SelectionsText>
-            Seçimler: {extras.length * 5}₺
+        
+        <EndSection>  
+        <TotalOrder>Sipariş Toplamı</TotalOrder>
+        <SelectionsText>
+            Seçimler {extras.length * 5}₺
           </SelectionsText>
-          <TotalPrice>Toplam: {calculateTotal()}₺</TotalPrice>
-        </TotalSection>
-
+          <TotalPrice>Toplam {calculateTotal()}₺</TotalPrice>
+        
         <ButtonContainer>
         <Button
           color="primary"
@@ -478,10 +505,10 @@ function SiparisFormu() {
     }}
     onClick={handleSubmit}
   >
-    Sipariş Ver
+    SİPARİŞ VER
   </Button>
 </ButtonContainer>
-
+</EndSection>
       </Section>
     </Container>
   );
