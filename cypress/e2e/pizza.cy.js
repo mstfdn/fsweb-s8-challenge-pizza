@@ -1,4 +1,13 @@
 describe('Sipariş Formu Testleri', () => {
+  it('Sipariş Ver butonuna tıklayınca Sipariş Formu sayfasına yönlendirilmelidir', () => {
+    // Ana sayfaya gidiyoruz
+    cy.visit('http://localhost:5173/'); // Ana sayfaya git
+
+    // "Sipariş Ver" butonuna tıklıyoruz ve sipariş formu sayfasına yönlendirilip yönlendirilmediğini kontrol ediyoruz
+    cy.contains('SİPARİŞ VER').first().click(); // İlk "SİPARİŞ VER" butonuna tıklama
+    cy.url().should('include', '/siparis'); // Sipariş Formu sayfasına yönlendirilmiş olmalı
+  });
+
   it('İsim inputuna metin girilmeli', () => {
     cy.visit('http://localhost:5173/siparis'); // Sipariş formuna git
     cy.get('input[type="text"]') // İsim inputunu seç
@@ -23,10 +32,10 @@ describe('Sipariş Formu Testleri', () => {
       .type('Mustafa'); // İsim gir
 
     // Hamur seçme
-    cy.get('select#dough').select('thin'); // İnce hamur seç
+    cy.get('select#dough').select('ince'); // İnce hamur seç
 
     // Boyut seçme
-    cy.get('input[type="radio"][id="medium"]').check(); // Orta boy seç
+    cy.get('input[type="radio"][id="orta"]').check(); // Orta boy seç
 
     // Ekstra malzeme seçme
     cy.get('input[type="checkbox"]').first().check(); // İlk checkbox'ı seç
@@ -35,7 +44,7 @@ describe('Sipariş Formu Testleri', () => {
     cy.get('textarea').type('Lütfen extra peynir ekleyin'); // Not ekle
 
     // Sipariş ver butonuna tıklama
-    cy.get('button').contains('Sipariş Ver').click();
+    cy.get('button').contains('SİPARİŞ VER').click();
 
     // Yönlendirme kontrolü
     cy.url().should('include', '/onay'); // Onay sayfasına yönlendirilmiş olmalı
