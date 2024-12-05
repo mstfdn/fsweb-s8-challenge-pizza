@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Input, Label } from 'reactstrap';
-
+import Footer from './Footer';
 
 const Container = styled.div`
   font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
+  
 `;
 
 const Header = styled.header`
@@ -39,18 +38,19 @@ const PizzaImageSection = styled.section`
 `;
 
 const PizzaImage = styled.img`
-  width: 70%;
+  width: 30%;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
 `;
 
 const NavContainer = styled.div`
+  
   display: flex;
   justify-content: flex-start;
   gap: 5px; /* Öğeler arasındaki boşluk */
   margin: 20px 0;
-  padding-left: 20px; /* Section ile hizalamak için sol boşluk */
+  padding-left: 895px; /* Section ile hizalamak için sol boşluk */
 `;
 
 const NavLink = styled.a`
@@ -80,6 +80,8 @@ const NavLink = styled.a`
 
 
 const Section = styled.section`
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
   padding: 20px;
   background-color: #f7f7f7;
@@ -226,19 +228,22 @@ const TotalSection = styled.div`
 `;
 
 const EndSection = styled.div`
-  position: absolute; /* Konumlandırmayı serbest bırakır */
-  right: 5px;
-  bottom: -200px;
+  position: relative; /* Konumlandırmayı serbest bırakır */
+  right: -150px;
+  bottom: 80px;
   border: 1px  black;
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
-  padding-left: 40px; /* Sol taraftan ekstra boşluk ekleyerek border'ı genişletir */
+  padding-left: 30px; /* Sol taraftan ekstra boşluk ekleyerek border'ı genişletir */
   display: flex;
   flex-direction: column; /* Alt alta dizme */
   align-items: flex-start; /* Sağ tarafa hizalama */
   background-color: #f5f1e6; /* Border arka plan rengini #f5f1e6 yapar */
+  margin-bottom: 10px;
+  padding-bottom: 120px; /* Footer ile çakışmayı engeller */
 `;
+
 
 
 
@@ -510,7 +515,9 @@ function SiparisFormu() {
 </ButtonContainer>
 </EndSection>
       </Section>
+      <Footer />
     </Container>
+    
   );
 }
 
