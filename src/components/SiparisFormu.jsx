@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Input, Label } from 'reactstrap';
+import { Button, Input, Label } from 'reactstrap';
 
 
 const Container = styled.div`
@@ -200,17 +200,21 @@ const QuantityControl = styled.div`
 `;
 
 const QuantityButton = styled.button`
-  padding: 5px 15px;
+  padding: 10px 20px; 
   margin: 0 10px;
   background-color: #fbc02d;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px; 
   cursor: pointer;
+  font-size: 1.2rem; 
+  width: 50px; 
+  height: 50px; 
 
   &:hover {
     background-color: #f9a825;
   }
 `;
+
 
 const TotalSection = styled.div`
   position: absolute;
@@ -250,6 +254,12 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+
+  button {
+    width: 200px; /* Genişliği artırır */
+    height: 60px; /* Yüksekliği artırır */
+    font-size: 1.5rem; /* Yazı boyutunu büyütür */
+  }
 `;
 
 function SiparisFormu() {
@@ -441,7 +451,7 @@ function SiparisFormu() {
         <Divider />
 
         <QuantityControl>
-          <label>Adet:</label>
+          
           <QuantityButton onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</QuantityButton>
           {quantity}
           <QuantityButton onClick={() => setQuantity(quantity + 1)}>+</QuantityButton>
@@ -455,8 +465,23 @@ function SiparisFormu() {
         </TotalSection>
 
         <ButtonContainer>
-          <OrderButton onClick={handleSubmit}>Sipariş Ver</OrderButton>
-        </ButtonContainer>
+        <Button
+          color="primary"
+          size="lg"
+          style={{
+          backgroundColor: '#fbc02d',
+          color: 'white',
+          padding: '10px 20px',
+          border: 'none',
+          borderRadius: '5px',
+          fontSize: '1.2rem',
+    }}
+    onClick={handleSubmit}
+  >
+    Sipariş Ver
+  </Button>
+</ButtonContainer>
+
       </Section>
     </Container>
   );
