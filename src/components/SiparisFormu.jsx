@@ -126,12 +126,33 @@ const RadioButtonContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-bottom: 10px;
 `;
 
-const RadioLabel = styled.div`
+const RadioInput = styled.input`
+  width: 20px;  /* Radio buton boyutunu büyütür */
+  height: 20px;
+  cursor: pointer;
+  appearance: none; /* Varsayılan stilini kaldırır */
+  border: 2px solid #000;
+  border-radius: 4px; /* Kare köşe görünümünü sağlar */
+  background-color: white;
+  transition: all 0.3s ease;  /* Yumuşak geçiş efekti */
+
+  &:checked {
+    background-color: red; /* Seçili durumda kırmızı arkaplan */
+    border-color: red; /* Sınır rengini kırmızı yapar */
+  }
+
+  &:checked + label {
+    color: black; /* Yazı rengini siyah yapar */
+  }
+`;
+
+const RadioLabel = styled.label`
   display: flex;
-  align-items: center;
-  gap: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 `;
 
 const RedStar = styled.span`
@@ -145,13 +166,44 @@ const SelectionContainer = styled.div`
   align-items: flex-start;
   gap: 20px;
   margin: 10px 0;
+  
+`;
+
+const CustomSelect = styled.select`
+  position: relative;
+  left: -2px;
+  top: 10px;
+  width: 40%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  appearance: none; /* Varsayılan select okunu kaldırır */
+  background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-3 0 22 22%22 fill=%22none%22%3E%3Cpath fill-rule=%22evenodd%22 clip-rule=%22evenodd%22 d=%22M8.3 6.7L11.6 10 8.3 13.3C7.9 13.7 7.2 13.6 6.8 13.2C6.4 12.8 6.5 12.1 6.9 11.7L9.2 9.3H3.8C3.3 9.3 2.9 8.9 2.9 8.3C2.9 7.8 3.3 7.4 3.8 7.4H9.2L6.9 5.1C6.5 4.7 6.4 4 6.8 3.6C7.2 3.2 7.9 3.3 8.3 3.7L11.6 7.3L8.3 6.7Z%22 fill=%22%23ccc%22/%3E%3C/svg%3E'); 
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #f9a825;
+  }
+
+  &:hover {
+    border-color: #f9a825;
+  }
 `;
 
 const SelectGroup = styled.div`
+  position: relative;
+  left: 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+  width: 100%;
 `;
 
 
@@ -177,7 +229,25 @@ const CheckboxLabel = styled.label`
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  margin-bottom: 10px;
+`;
+
+const CheckboxInput = styled.input`
+  width: 20px;  /* Checkbox boyutunu büyütür */
+  height: 20px;
+  margin-right: 10px; /* Checkbox ile yazı arasındaki boşluk */
+  transition: all 0.3s ease;  /* Yumuşak geçiş efekti */
+
+  &:checked {
+    background-color: yellow; /* Arkaplan rengini sarı yapar */
+    border-color: yellow;  /* Border rengini sarı yapar */
+  }
+
+  &:checked + label {
+    color: black; /* Yazı rengini siyah yapar */
+  }
+
   
 `;
 
@@ -375,57 +445,57 @@ function SiparisFormu() {
         </Description>
 
         <SelectionContainer>
-          <RadioGroup>
-            <RadioLabel>
-              <RedStar>*</RedStar>
-              <span>Boyut Seç</span>
-            </RadioLabel>
-            <RadioButtonContainer>
-              <input
-                type="radio"
-                id="küçük"
-                value="küçük"
-                checked={size === 'küçük'}
-                onChange={(e) => setSize(e.target.value)}
-              />
-              <label htmlFor="küçük">Küçük</label>
-            </RadioButtonContainer>
-            <RadioButtonContainer>
-              <input
-                type="radio"
-                id="orta"
-                value="orta"
-                checked={size === 'orta'}
-                onChange={(e) => setSize(e.target.value)}
-              />
-              <label htmlFor="orta">Orta</label>
-            </RadioButtonContainer>
-            <RadioButtonContainer>
-              <input
-                type="radio"
-                id="büyük"
-                value="büyük"
-                checked={size === 'büyük'}
-                onChange={(e) => setSize(e.target.value)}
-              />
-              <label htmlFor="büyük">Büyük</label>
-            </RadioButtonContainer>
-          </RadioGroup>
+        <RadioGroup>
+  <RadioLabel>
+    <RedStar>*</RedStar>
+    <span>Boyut Seç</span>
+  </RadioLabel>
+  <RadioButtonContainer>
+    <RadioInput
+      type="radio"
+      id="küçük"
+      value="küçük"
+      checked={size === 'küçük'}
+      onChange={(e) => setSize(e.target.value)}
+    />
+    <label htmlFor="küçük">Küçük</label>
+  </RadioButtonContainer>
+  <RadioButtonContainer>
+    <RadioInput
+      type="radio"
+      id="orta"
+      value="orta"
+      checked={size === 'orta'}
+      onChange={(e) => setSize(e.target.value)}
+    />
+    <label htmlFor="orta">Orta</label>
+  </RadioButtonContainer>
+  <RadioButtonContainer>
+    <RadioInput
+      type="radio"
+      id="büyük"
+      value="büyük"
+      checked={size === 'büyük'}
+      onChange={(e) => setSize(e.target.value)}
+    />
+    <label htmlFor="büyük">Büyük</label>
+  </RadioButtonContainer>
+</RadioGroup>
 
-          <SelectGroup>
-            <label htmlFor="dough">
-              <RedStar>*</RedStar> Hamur Seç
-            </label>
-            <select
-              id="dough"
-              value={dough}
-              onChange={(e) => setDough(e.target.value)}
-            >
-              <option value="">Hamur Türü Seçin</option>
-              <option value="ince">İnce</option>
-              <option value="kalın">Kalın</option>
-            </select>
-          </SelectGroup>
+<SelectGroup>
+  <label htmlFor="dough">
+    <RedStar>*</RedStar> Hamur Seç
+  </label>
+  <CustomSelect
+    id="dough"
+    value={dough}
+    onChange={(e) => setDough(e.target.value)}
+  >
+    <option value="">Hamur Türü Seçin</option>
+    <option value="ince">İnce</option>
+    <option value="kalın">Kalın</option>
+  </CustomSelect>
+</SelectGroup>
         </SelectionContainer>
 
         <SectionTitle>Ek Malzemeler</SectionTitle>
@@ -447,14 +517,10 @@ function SiparisFormu() {
             'Ananas',
             'Kabak',
           ].map((item) => (
-            <CheckboxLabel key={item}>
-              <input
-                type="checkbox"
-                value={item}
-                onChange={handleExtrasChange}
-              />
-              {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
-            </CheckboxLabel>
+            <CheckboxLabel>
+  <CheckboxInput type="checkbox" value={item} onChange={handleExtrasChange} />
+  {item.charAt(0).toUpperCase() + item.slice(1)} - 5₺
+</CheckboxLabel>
           ))}
         </CheckboxGroup>
 
