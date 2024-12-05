@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 
 const SectionContainer = styled.section`
   padding: 20px 40px;
@@ -214,6 +216,8 @@ const Buttoniki = styled.button`
   }
 `;
 
+
+
 const Section = () => {
   return (
     <SectionContainer>
@@ -248,19 +252,25 @@ const Section = () => {
         <LargeImage>
           <Heading>Özel Lezzetus</Heading>
           <Subheading>Position: Absolute Acı Burger</Subheading>
-          <Buttoniki>SİPARİŞ VER</Buttoniki>
+          <Link to="/siparis">
+            <Buttoniki>SİPARİŞ VER</Buttoniki>
+            </Link>
         </LargeImage>
         <SmallImagesContainer>
           <SmallImage>
             <Headingiki>Hackathlon</Headingiki>
             <Subheadingiki>Burger Menü</Subheadingiki>
+            <Link to="/siparis">
             <Button>SİPARİŞ VER</Button>
+            </Link>
           </SmallImage>
           <SmallImageiki>
             <Headinguc style={{ color: "red" }}>Çoooook </Headinguc>
             <Subheadinguc>hızlı </Subheadinguc>
             <Subheadingdrt>npm gibi kurye</Subheadingdrt>
+            <Link to="/siparis">
             <Button>SİPARİŞ VER</Button>
+            </Link>
           </SmallImageiki>
         </SmallImagesContainer>
       </ImageContainer>

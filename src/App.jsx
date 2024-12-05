@@ -18,6 +18,7 @@ function App() {
           <ProductSection />
           <Footer />
         </>} />
+        <Route path="/" element={<Section />} />
         <Route path="/siparis" element={<SiparisFormu />} />
         <Route path="/onay" element={<SiparisOnayi />} />
       </Routes>
