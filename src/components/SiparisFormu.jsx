@@ -242,6 +242,7 @@ const EndSection = styled.div`
   background-color: #f5f1e6; /* Border arka plan rengini #f5f1e6 yapar */
   margin-bottom: 10px;
   padding-bottom: 120px; /* Footer ile çakışmayı engeller */
+  width: 80%;
 `;
 
 
