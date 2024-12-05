@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Input, Label } from 'reactstrap';
+
 
 const Container = styled.div`
   font-family: Arial, sans-serif;
@@ -173,6 +176,7 @@ const CheckboxLabel = styled.label`
   align-items: center;
   cursor: pointer;
   font-size: 0.9rem;
+  
 `;
 
 const Textarea = styled.textarea`
@@ -412,13 +416,18 @@ function SiparisFormu() {
         </CheckboxGroup>
 
         <div>
-          <h3>Adınızı Girin</h3>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Adınızı girin"
-          />
+        <Label for="nameInput" className="fw-bold text-primary">
+        Adınızı Girin
+      </Label>
+      <Input
+        id="nameInput"
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Adınızı girin"
+        bsSize="lg" // Daha büyük bir input alanı için
+        className="border-primary shadow-sm"
+      />
           {nameError && <p style={{ color: 'red' }}>{nameError}</p>}
         </div>
 
