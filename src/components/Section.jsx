@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
+
 const SectionContainer = styled.section`
   padding: 20px 40px;
   background-color: #f8f8f8;
@@ -96,14 +97,15 @@ const CenterText = styled.h2`
   font-size: 24px;
   margin: -1rem;
   color: red;
-  font-family: "Satisfy", serif;
-  font-weight: 900;
+  font-family: "Satisfy", cursive;
+  font-weight: 400; /* Satisfy sadece regular destekler, bunu 400 yapabilirsiniz */
   font-style: oblique;
 `;
 
+
 const SubText = styled.p`
   text-align: center;
-  font-family: "Roboto Mono", sans-serif;
+  font-family: "Barlow";
   font-size: 32px;
   margin: 2rem;
   font-weight: bold;
@@ -112,13 +114,26 @@ const SubText = styled.p`
 
 const Heading = styled.h3`
   position: absolute;
-  top: 10px;
+  text-align: left;
+  top: 20px;
   left: 30px;
   color: white;
   font-family: "Roboto Mono", sans-serif;
   font-weight: 900;
   font-size: 50px;
+  line-height: 1.2; /* Sütunlar arasında mesafe */
+
+  &::before {
+    content: "Özel"; /* Üstteki yazıyı belirle */
+    display: block;
+  }
+
+  &::after {
+    content: "Lezzetus"; /* Alttaki yazıyı belirle */
+    display: block;
+  }
 `;
+
 
 const Headingiki = styled.h3`
   position: absolute;
@@ -250,7 +265,7 @@ const Section = () => {
 
       <ImageContainer>
         <LargeImage>
-          <Heading>Özel Lezzetus</Heading>
+          <Heading></Heading>
           <Subheading>Position: Absolute Acı Burger</Subheading>
           <Link to="/siparis">
             <Buttoniki>SİPARİŞ VER</Buttoniki>

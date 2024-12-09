@@ -60,27 +60,27 @@ const ProductImage = styled.div`
   background-image: url("../Assets/Iteration-2-aseets/pictures/food-1.png");
   background-size: cover;
   background-position: center;
-  height: 350px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 300px;
+  border-radius: 30px;
+  margin-bottom: 50px;
 `;
 
 const ProductImageiki = styled.div`
   background-image: url("../Assets/Iteration-2-aseets/pictures/food-2.png");
   background-size: cover;
   background-position: center;
-  height: 350px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 300px;
+  border-radius: 30px;
+  margin-bottom: 50px;
 `;
 
 const ProductImageuc = styled.div`
   background-image: url("../Assets/Iteration-2-aseets/pictures/food-3.png");
   background-size: cover;
   background-position: center;
-  height: 350px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 300px;
+  border-radius: 30px;
+  margin-bottom: 50px;
 `;
 
 const ProductDetails = styled.div`
