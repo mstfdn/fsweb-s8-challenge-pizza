@@ -1,21 +1,25 @@
 import React from "react";
+import "./intropage.css"; // CSS dosyasını içe aktarın
 
-const MenuBar = ({ icons = [], labels = [], classProp }) => {
-  if (!Array.isArray(labels) || !Array.isArray(icons)) {
-    console.error('icons ve labels dizileri geçerli bir dizi olmalı');
-    return null;
+const MenuCards = ({ items }) => {
+  if (!items || items.length === 0) {
+    return <p>Menü öğesi bulunamadı.</p>;
   }
 
   return (
-    <nav className={classProp} aria-label="Menu">
-      {labels.length > 0 && labels.map((label, index) => (
-        <div className="intro-page-img-menu-item" key={index}>
-          <img src={icons[index]?.src} alt={label.alt || "Menu item"} />
-          <span>{label.text}</span>
+    <div className="menu-cards">
+      {items.map((item) => (
+        <div key={item.id} className="menu-card">
+          <img src={item.image} alt={item.name} />
+          <h3>{item.name}</h3>
+          <div className="menu-card-info">
+            <p className="menu-card-rating">Puan: {item.rating}</p>
+            <p className="menu-card-price">{item.price}₺</p>
+          </div>
         </div>
       ))}
-    </nav>
+    </div>
   );
 };
 
-export default MenuBar;
+export default MenuCards;
