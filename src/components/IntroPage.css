@@ -380,6 +380,8 @@
     text-align: center;
     width: 300px; /* Kart genişliği */
     position: relative;
+    cursor: pointer;
+    transform: scale(1.02);
   }
   
   .menu-card img {
