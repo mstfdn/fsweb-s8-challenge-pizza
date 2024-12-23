@@ -1,0 +1,146 @@
+.success-page {
+    background: var(--color-kirmizi);
+    padding: 0 10% 10% 10%;
+  }
+  
+  .success-page-logo-container {
+    padding: 2rem 0 0 0;
+  }
+  
+  .success-page-logo-container img {
+    width: 100%;
+  }
+  
+  .success-order-confirmed-container {
+    margin: 1rem 20%;
+    padding: 2rem;
+  }
+  
+  .success-styled-text {
+    color: var(--color-sari);
+    font-family: Satisfy;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: -2rem;
+  }
+  
+  .success-confirmation-text {
+    color: var(--color-bej);
+    font-family: Roboto Condensed;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 250;
+    letter-spacing: 0rem;
+    margin: 2rem;
+  }
+  
+  .success-hr {
+    color: var(--color-bej);
+    opacity: 50%;
+  }
+  
+  .success-pizza-name {
+    color: var(--color-bej);
+    font-family: Barlow;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  .success-order-details-container {
+    color: var(--color-bej);
+    text-align: center;
+    margin: 0rem 20%;
+    padding: 0 2rem;
+  }
+  
+  .success-order-details-display {
+    padding: 1rem 5rem;
+    text-align: left;
+  }
+  
+  .success-order-price-details {
+    border: 1px solid var(--color-bej);
+    border-radius: 5px;
+    margin: 0 30%;
+    padding: 2rem;
+    text-align: left;
+  }
+  
+  .success-order-price-details-header {
+    color: var(--color-bej);
+    font-family: Barlow;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .secimler {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-bej);
+    font-family: Barlow;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  
+  .secimler p {
+    margin: 0;
+  }
+  
+  .toplam {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-bej);
+    font-family: Barlow;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  
+  .toplam p {
+    margin: 0;
+  }
+  
+  @media (max-width: 900px) {
+    .success-page {
+      background: var(--color-kirmizi);
+      padding: 0 5% 5% 5%;
+    }
+  
+    .success-order-confirmed-container {
+      margin: -2rem 1rem 0 1rem;
+      padding: 1rem;
+    }
+  
+    .success-confirmation-text {
+      color: var(--color-bej);
+      font-family: Roboto Condensed;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 250;
+      letter-spacing: 0rem;
+      margin: 2rem 0rem 1rem 0rem;
+    }
+  
+    .success-order-details-container {
+      color: var(--color-bej);
+      text-align: center;
+      margin: 0rem 0;
+      padding: 0;
+    }
+  
+    .success-order-details-display {
+      padding: 0 1rem;
+      text-align: left;
+    }
+  
+    .success-order-price-details {
+      border: 1px solid var(--color-bej);
+      border-radius: 5px;
+      margin: 0 1rem;
+      padding: 1rem;
+      text-align: left;
+    }
+  }

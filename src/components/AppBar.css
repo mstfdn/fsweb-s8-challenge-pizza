@@ -1,0 +1,15 @@
+.app-bar-logo-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-kirmizi);
+    color: var(--color-bej);
+  }
+  
+  .app-bar-logo {
+    position: relative;
+    height: 3rem;
+    margin: 2rem;
+    margin-bottom: 1rem;
+  }

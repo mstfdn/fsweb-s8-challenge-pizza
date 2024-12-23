@@ -1,0 +1,42 @@
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #faf6f1; /* Light background */
+    border: 1px solid #e0e0e0; /* Border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the container */
+    gap: 10px; /* Space between buttons and display */
+  }
+  
+  .quantity-button {
+    background-color: transparent; /* No background */
+    border: none; /* No border */
+    font-size: 1.5rem; /* Large font size for the symbols */
+    font-weight: bold;
+    color: #333; /* Default text color */
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Circular buttons */
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .quantity-button:disabled {
+    color: #ccc; /* Gray text when disabled */
+    cursor: not-allowed;
+  }
+  
+  .quantity-button:hover:not(:disabled) {
+    background-color: #ffebcc; /* Light orange background on hover */
+    color: #ff9800; /* Orange text color */
+  }
+  
+  .quantity-display {
+    font-size: 1.25rem; /* Adjust font size for the number */
+    font-weight: bold; /* Bold text for better visibility */
+    color: #333; /* Dark text */
+  }

@@ -1,28 +1,21 @@
-// src/App.jsx
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Anasayfa from "./components/Anasayfa";
-import Section from "./components/Section";
-import ProductSection from "./components/ProductSection";
-import SiparisFormu from "./components/SiparisFormu";
-import SiparisOnayi from "./components/SiparisOnayi";
-import Footer from './components/Footer'; 
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import OrderPage from "./components/OrderPage.jsx";
+import IntroPage from "./components/IntroPage.jsx";
+import Success from "./components/Success.jsx";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<>
-          <Anasayfa />
-          <Section />
-          <ProductSection />
-          <Footer />
-        </>} />
-        <Route path="/" element={<Section />} />
-        <Route path="/siparis" element={<SiparisFormu />} />
-        <Route path="/onay" element={<SiparisOnayi />} />
-      </Routes>
-    </>
+    <div>
+      <Switch>
+        <Route exact path="/" component={IntroPage} />
+        <Route exact path="/siparis-formu" component={OrderPage} />
+        <Route path="/success" component={Success} />
+      </Switch>
+      <ToastContainer />
+    </div>
   );
 }
 

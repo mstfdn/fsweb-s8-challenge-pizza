@@ -1,0 +1,365 @@
+.intro-page-banner-container {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Full screen height */
+    background-image: url("../../Assets/Iteration-1-assets/home-banner.png"); /* Adjust the path */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Avoids tiling the image */
+  }
+  
+  .intro-page-hero-styled-text {
+    font-family: satisfy;
+    color: var(--color-sari);
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 2rem 0 -1rem 0;
+  }
+  
+  .intro-page-hero-heading {
+    color: var(--color-bej);
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 200;
+    letter-spacing: -0.1rem;
+  }
+  
+  #intro-page-hero-button {
+    border-radius: 100px;
+    margin: 3rem;
+    padding: 0.7rem 3.5rem;
+  }
+  
+  .intro-page-content-wrapper {
+    background: #faf7f2;
+  }
+  
+  .intro-page-menu-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-top: 2px solid #d9d7d7;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .intro-page-menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  
+  .intro-page-menu-item:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .intro-page-menu-item img {
+    margin: 5px;
+  }
+  
+  .intro-page-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 4rem 2rem;
+    gap: 2rem;
+  }
+  
+  .intro-page-cta-left-column {
+    background-image: url("../Assets/Iteration-2-aseets/cta/kart-1.png"); /* Adjust the path */
+    background-position: center; /* Centers the image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    min-width: 30vw;
+    aspect-ratio: 1/1;
+    text-align: left;
+  }
+  
+  .cta-left-heading {
+    font-family: Quattrocento;
+    color: white;
+    font-size: 4rem;
+    font-weight: 200;
+    margin: 0;
+    padding: 3rem 2rem 0 2rem;
+    text-align: left;
+  }
+  
+  .cta-left-subtitle {
+    color: white;
+    text-align: left;
+    padding: 0 2rem;
+    font-weight: 600;
+  }
+  
+  #cta-left-button {
+    color: var(--color-kirmizi);
+    background-color: white;
+    text-align: left;
+    margin: 0 2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+  }
+  
+  .intro-page-cta-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .cta-right-card-1 {
+    background-image: url("../Assets/Iteration-2-aseets/cta/kart-2.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    min-width: 30vw;
+    aspect-ratio: 2/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+  }
+  
+  .cta-right-card-1-heading {
+    color: white;
+    padding: 0 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 2rem;
+    padding: 0;
+  }
+  
+  #cta-right-button1 {
+    color: var(--color-kirmizi);
+    background-color: white;
+    margin: 0 0 0 2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    max-width: max-content;
+  }
+  
+  .cta-right-card-2 {
+    background-image: url("../Assets/Iteration-2-aseets/cta/kart-3.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    min-width: 30vw;
+    aspect-ratio: 2/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+  }
+  
+  .cta-right-card-2-heading {
+    color: var(--color-koyu-gri);
+    padding: 0 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 2rem;
+    padding: 0;
+  }
+  
+  #cta-right-button2 {
+    color: var(--color-kirmizi);
+    background-color: white;
+    margin: 0 0 0 2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    max-width: max-content;
+  }
+  
+  .intro-page-img-menu-wrapper {
+    padding: 0 5% 1rem 5%;
+  }
+  
+  .intro-page-img-menu-styled-heading {
+    font-family: satisfy;
+    color: var(--color-kirmizi);
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 0 0 -1rem 0;
+  }
+  
+  .intro-page-img-menu-heading {
+    font-family: roboto condensed;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+  }
+  
+  .intro-page-img-menu-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 1rem;
+  }
+  
+  .intro-page-img-menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+    border-radius: 20px;
+    background: #ffffff;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+  }
+  
+  .intro-page-img-menu-item:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .intro-page-img-menu-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3rem 0;
+    gap: 1.5rem;
+  }
+  
+  .intro-page-img-menu-card1,
+  .intro-page-img-menu-card2,
+  .intro-page-img-menu-card3 {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+  }
+  .intro-page-img-menu-card1:hover,
+  .intro-page-img-menu-card2:hover,
+  .intro-page-img-menu-card3:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+  
+  .card-heading-container {
+    text-align: left;
+    margin: 0;
+  }
+  
+  .card-image-container img {
+    max-width: 100%;
+  }
+  
+  .card-heading {
+    font-family: roboto condensed;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .card-details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .card-detail-rating,
+  .card-detail-rating-count,
+  .card-detail-price {
+    margin: 0;
+  }
+  
+  .card-detail-price {
+    font-weight: 600;
+  }
+  
+  @media (max-width: 900px) {
+    .app-bar-logo {
+      height: 3rem;
+    }
+  
+    .intro-page-hero-heading {
+      font-size: 3rem;
+    }
+  
+    .intro-page-cta-wrapper {
+      padding: 1rem;
+      gap: 1rem;
+    }
+  
+    .intro-page-cta-left-column {
+      aspect-ratio: none;
+      min-width: 40vw;
+    }
+  
+    .cta-right-card-1 {
+      aspect-ratio: none;
+      min-width: 40vw;
+    }
+    .cta-right-card-2 {
+      aspect-ratio: none;
+      min-width: 40vw;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .app-bar-logo {
+      height: 2rem;
+    }
+  
+    .intro-page-hero-heading {
+      font-size: 2.5rem;
+    }
+  
+    .cta-left-heading {
+      padding: 1rem;
+      font-size: 2rem;
+    }
+    .cta-left-subtitle {
+      padding: 0 1rem;
+      margin: 0;
+    }
+  
+    .cta-right-card-1 {
+      padding: 0.5rem;
+    }
+    .cta-right-card-1-heading,
+    .cta-right-card-2-heading {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+      margin: 0;
+    }
+  
+    .cta-right-card-2 {
+      padding: 0.5rem;
+    }
+  
+    #cta-left-button,
+    #cta-right-button1,
+    #cta-right-button2 {
+      margin: 0.2rem;
+      padding: 0.3rem 1rem;
+      letter-spacing: 0rem;
+    }
+  
+    .intro-page-img-menu-cards-container {
+      flex-direction: column;
+    }
+  }
