@@ -3,6 +3,13 @@ import footImg from "../../Assets/Iteration-2-aseets/footer/icons/icon-1.png";
 import footImg2 from "../../Assets/Iteration-2-aseets/footer/icons/icon-2.png";
 import footImg3 from "../../Assets/Iteration-2-aseets/footer/icons/icon-3.png";
 
+import instaImg from "../../Assets/Iteration-2-aseets/footer/insta/li-0.png";
+import instaImg1 from "../../Assets/Iteration-2-aseets/footer/insta/li-1.png";
+import instaImg2 from "../../Assets/Iteration-2-aseets/footer/insta/li-2.png";
+import instaImg3 from "../../Assets/Iteration-2-aseets/footer/insta/li-3.png";
+import instaImg4 from "../../Assets/Iteration-2-aseets/footer/insta/li-4.png";
+import instaImg5 from "../../Assets/Iteration-2-aseets/footer/insta/li-5.png";
+
 // Footer container
 const FooterContainer = styled.footer`
   background-color: #000;
@@ -119,12 +126,12 @@ const Footer = () => {
         <FooterColumn>
           <FooterTitle>Instagram</FooterTitle>
           <InstagramGrid>
-            <img src="../Assets/Iteration-2-aseets/footer/insta/li-0.png" alt="Instagram Photo 1" />
-            <img src="../Assets/Iteration-2-aseets/footer/insta/li-1.png" alt="Instagram Photo 2" />
-            <img src="../Assets/Iteration-2-aseets/footer/insta/li-2.png" alt="Instagram Photo 3" />
-            <img src="../Assets/Iteration-2-aseets/footer/insta/li-3.png" alt="Instagram Photo 4" />
-            <img src="../Assets/Iteration-2-aseets/footer/insta/li-4.png" alt="Instagram Photo 5" />
-            <img src="../Assets/Iteration-2-aseets/footer/insta/li-5.png" alt="Instagram Photo 6" />
+            <img src={instaImg} alt="Instagram Photo 1" />
+            <img src={instaImg1} alt="Instagram Photo 2" />
+            <img src={instaImg2} alt="Instagram Photo 3" />
+            <img src={instaImg3} alt="Instagram Photo 4" />
+            <img src={instaImg4} alt="Instagram Photo 5" />
+            <img src={instaImg5} alt="Instagram Photo 6" />
           </InstagramGrid>
         </FooterColumn>
       </FooterContent>
