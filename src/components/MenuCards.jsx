@@ -1,5 +1,5 @@
 import React from "react";
-import "./intropage.css"; // CSS dosyasını içe aktarın
+import "./IntroPage.css"
 
 const MenuCards = ({ items }) => {
   if (!items || items.length === 0) {
