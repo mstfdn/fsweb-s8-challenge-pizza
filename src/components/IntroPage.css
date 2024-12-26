@@ -74,7 +74,6 @@
   }
   
   .intro-page-cta-left-column {
-    background-image: url("../Assets/Iteration-2-aseets/cta/kart-1.png"); /* Adjust the path */
     background-position: center; /* Centers the image */
     background-size: cover;
     background-repeat: no-repeat;
@@ -118,7 +117,7 @@
   }
   
   .cta-right-card-1 {
-    background-image: url("../Assets/Iteration-2-aseets/cta/kart-2.png");
+    
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -151,7 +150,6 @@
   }
   
   .cta-right-card-2 {
-    background-image: url("../Assets/Iteration-2-aseets/cta/kart-3.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -2,8 +2,8 @@ import React from "react";
 import { Typography, Button } from "@mui/material";
 import logo from "../../Assets/Iteration-1-assets/logo.svg";
 import mainImg from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
-import mainImg2 from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
-import mainImg3 from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
+import mainImg2 from "../../Assets/Iteration-2-aseets/cta/kart-2.png";
+import mainImg3 from "../../Assets/Iteration-2-aseets/cta/kart-3.png";
 import { useHistory } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -49,7 +49,12 @@ function IntroPage() {
           classProp="intro-page-menu-bar"
         />
         <div className="intro-page-cta-wrapper">
-          <div className="intro-page-cta-left-column" src={mainImg} alt="Special Pizza 1">
+        <div
+            className="intro-page-cta-left-column"
+            style={{
+              backgroundImage: `url(${mainImg})`, // Inline style ile background-image ekleniyor
+            }}
+          >
             <h2 className="cta-left-heading">
               Özel <br /> Lezzetus
             </h2>
@@ -64,8 +69,13 @@ function IntroPage() {
               <span>Sipariş Ver</span>
             </Button>
           </div>
-          <div className="intro-page-cta-right-column" src={mainImg2} alt="Special Pizza 1">
-            <div className="cta-right-card-1">
+          <div className="intro-page-cta-right-column">
+          <div
+            className="cta-right-card-1"
+            style={{
+              backgroundImage: `url(${mainImg2})`, // Inline style ile background-image ekleniyor
+            }}
+          >
               <h2 className="cta-right-card-1-heading">
                 Hackatlon <br /> Burger Menu
               </h2>
@@ -79,7 +89,12 @@ function IntroPage() {
                 <span>Sipariş Ver</span>
               </Button>
             </div>
-            <div className="cta-right-card-2" src={mainImg3} alt="Special Pizza 1">
+            <div
+            className="cta-right-card-2"
+            style={{
+              backgroundImage: `url(${mainImg3})`, // Inline style ile background-image ekleniyor
+            }}
+          >
               <h2 className="cta-right-card-2-heading">
                 <span style={{ color: "#ce2829" }}>Çooook </span> hızlı <br />{" "}
                 Npm gibi kurye
