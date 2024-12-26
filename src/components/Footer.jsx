@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import footImg from "../../Assets/Iteration-2-aseets/footer/icons/icon-1.png";
+import footImg2 from "../../Assets/Iteration-2-aseets/footer/icons/icon-2.png";
+import footImg3 from "../../Assets/Iteration-2-aseets/footer/icons/icon-3.png";
 
 // Footer container
 const FooterContainer = styled.footer`
@@ -92,15 +95,15 @@ const Footer = () => {
             Teknolojik Yemekler
           </FooterTitle>
           <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-            <Logo src="../Assets/Iteration-2-aseets/footer/icons/icon-1.png" alt="Logo 1" />
+          <Logo src={footImg} alt="Logo 1" />
             <p>341 Londonderry Road, İstanbul Türkiye</p>
           </div>
           <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-            <Logo src="../Assets/Iteration-2-aseets/footer/icons/icon-2.png" alt="Logo 2" />
+          <Logo src={footImg2} alt="Logo 2" />
             <p>aciktim@teknolojik.com</p>
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <Logo src="../Assets/Iteration-2-aseets/footer/icons/icon-3.png" alt="Logo 3" />
+          <Logo src={footImg3} alt="Logo 3" />
             <p>+90 216 123 45 67</p>
           </div>
         </FooterColumn>
