@@ -1,8 +1,12 @@
 import React from "react";
 import { Typography, Button } from "@mui/material";
 import logo from "../../Assets/Iteration-1-assets/logo.svg";
+import mainImg from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
+import mainImg2 from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
+import mainImg3 from "../../Assets/Iteration-2-aseets/cta/kart-1.png";
 import { useHistory } from "react-router-dom";
 import Footer from "./Footer";
+
 
 import MenuCards from "./MenuCards";
 import MenuBar from "./MenuBar";
@@ -45,7 +49,7 @@ function IntroPage() {
           classProp="intro-page-menu-bar"
         />
         <div className="intro-page-cta-wrapper">
-          <div className="intro-page-cta-left-column">
+          <div className="intro-page-cta-left-column" src={mainImg} alt="Special Pizza 1">
             <h2 className="cta-left-heading">
               Özel <br /> Lezzetus
             </h2>
@@ -60,7 +64,7 @@ function IntroPage() {
               <span>Sipariş Ver</span>
             </Button>
           </div>
-          <div className="intro-page-cta-right-column">
+          <div className="intro-page-cta-right-column" src={mainImg2} alt="Special Pizza 1">
             <div className="cta-right-card-1">
               <h2 className="cta-right-card-1-heading">
                 Hackatlon <br /> Burger Menu
@@ -75,7 +79,7 @@ function IntroPage() {
                 <span>Sipariş Ver</span>
               </Button>
             </div>
-            <div className="cta-right-card-2">
+            <div className="cta-right-card-2" src={mainImg3} alt="Special Pizza 1">
               <h2 className="cta-right-card-2-heading">
                 <span style={{ color: "#ce2829" }}>Çooook </span> hızlı <br />{" "}
                 Npm gibi kurye
