@@ -1,10 +1,23 @@
+
+import icon1 from "../../Assets/Iteration-2-aseets/icons/1.svg";
+import icon2 from "../../Assets/Iteration-2-aseets/icons/2.svg";
+import icon3 from "../../Assets/Iteration-2-aseets/icons/3.svg";
+import icon4 from "../../Assets/Iteration-2-aseets/icons/4.svg";
+import icon5 from "../../Assets/Iteration-2-aseets/icons/5.svg";
+import icon6 from "../../Assets/Iteration-2-aseets/icons/6.svg";
+
+import food1 from "../../Assets/Iteration-2-aseets/pictures/food-1.png";
+import food2 from "../../Assets/Iteration-2-aseets/pictures/food-2.png";
+import food3 from "../../Assets/Iteration-2-aseets/pictures/food-3.png";
+
+
 export const menuIcons = [
-    { src: "../Assets/Iteration-2-aseets/icons/1.svg" },
-    { src: "../Assets/Iteration-2-aseets/icons/2.svg" },
-    { src: "../Assets/Iteration-2-aseets/icons/3.svg" },
-    { src: "../Assets/Iteration-2-aseets/icons/4.svg" },
-    { src: "../Assets/Iteration-2-aseets/icons/5.svg" },
-    { src: "../Assets/Iteration-2-aseets/icons/6.svg" },
+    { src: icon1 },
+    { src: icon2 },
+    { src: icon3 },
+    { src: icon4 },
+    { src: icon5 },
+    { src: icon6 },
   ];
   
   export const firstMenuLabels = [
@@ -52,7 +65,7 @@ export const menuIcons = [
       id: 1,
       name: "Position Absolute Acı Pizza",
       price: 140,
-      image: "../Assets/Iteration-2-aseets/pictures/food-1.png",
+      image: food1,
       rating: 4.9,
       ratingCount: 124,
       description:
@@ -62,7 +75,7 @@ export const menuIcons = [
       id: 2,
       name: "Terminal Pizza",
       price: 180,
-      image: "../Assets/Iteration-2-aseets/pictures/food-2.png",
+      image: food2,
       rating: 4.7,
       ratingCount: 216,
       description:
@@ -72,7 +85,7 @@ export const menuIcons = [
       id: 3,
       name: "Ultimate Burger",
       price: 150,
-      image: "../Assets/Iteration-2-aseets/pictures/food-3.png",
+      image: food3,
       rating: 4.8,
       ratingCount: 89,
       description:
