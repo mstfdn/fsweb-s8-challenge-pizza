@@ -3,7 +3,7 @@ import { Typography, Button } from "@mui/material";
 import logo from "../../Assets/Iteration-1-assets/logo.svg";
 import { useHistory } from "react-router-dom";
 import Footer from "./Footer";
-import "./IntroPage.css";
+
 import MenuCards from "./MenuCards";
 import MenuBar from "./MenuBar";
 import { menuIcons, firstMenuLabels, secondMenuLabels, items } from "./MockDB";
